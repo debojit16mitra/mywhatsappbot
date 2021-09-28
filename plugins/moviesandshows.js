@@ -94,7 +94,7 @@ Bunny.addCommand({ pattern: 'anisearch ?(.*)', desc: Lang.MOVIE_DESC ,  deleteCo
 }));
 */
 
-
+//-----------------------------------Anime Search-----------------------------------------------------
 Asena.addCommand({ pattern: 'anisearch ?(.*)', fromMe: false , desc: Lang.SHOW_DESC,  deleteCommand: false}, async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a name.```', MessageType.text, { quoted: message.data });
@@ -120,7 +120,15 @@ Asena.addCommand({ pattern: 'anisearch ?(.*)', fromMe: false , desc: Lang.SHOW_D
         } = response.data[0].show.image
 	
 	const profileBuffer = await axios.get(original, {responseType: 'arraybuffer'})
-        const msg = `*${"Name"}*: ${name}\n*${"Status"}*: ${status}\n*${"Genres"}*: ${genres}\n*${"Average Runtime"}*: ${averageRuntime}\n*${"Started"}*: ${premiered}\n*${"Ended"}*: ${ended}\n*${"Average Rating"}*: ${average}\n*${"Official Site"}*: ${officialSite}\n*${"Summary"}*: ${summary}`
+        const msg = `*${"🎥Name"}*: ${name}\n\n
+		     *${"✍Status"}*: ${status}\n\n
+		     *${"🌀Genres"}*: ${genres}\n\n
+		     *${"⏳Average Runtime"}*: ${averageRuntime}\n\n
+		     *${"📆Started"}*: ${premiered}\n\n
+		     *${"📅Ended"}*: ${ended}\n\n
+		     *${"⭐Average Rating"}*: ${average}\n\n
+		     *${"📋Official Site"}*: ${officialSite}\n\n
+		     *${"📃Summary"}*: ${summary}`
        await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.image, {
           caption: msg,
         })
@@ -130,3 +138,6 @@ Asena.addCommand({ pattern: 'anisearch ?(.*)', fromMe: false , desc: Lang.SHOW_D
       )
   },
 )
+
+//-----------------------------------Show Search-----------------------------------------------------
+
