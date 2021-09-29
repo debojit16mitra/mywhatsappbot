@@ -264,7 +264,7 @@
             "SHORTS": "```Sorry,I can not get short videos. 😖```",
             "MOVIE_DESC": "Gives you movie details.",
             "MOVIE_NAME": "Please give me a movie name.",
-            "SHOW_DESC": "Gives you Show/Tv Series details",
+            "SHOW_DESC": "Gives you Anime/Show/Tv Series details",
             "APK_DESC": "Download APK files.",
             "APK_NEED": "Please enter a playstore app link.\nYou can search playstore by *.getpack* command.",
             "NO_APK": "Please enter a valid playstore app link.\nYou can search playstore by *.getpack* command.",
