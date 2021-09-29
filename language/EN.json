@@ -275,7 +275,8 @@
             "APK_DEV": "\n👨🏻‍💻 Developer : ",
             "APK_V": "\n📟 Version : ",
             "APK_SUM": "\n📃 Summary : ",
-            "ATTP_DESC": "A set of commands for converting text to stickers."
+            "ATTP_DESC": "A set of commands for converting text to stickers.",
+            "UPDATE_LIST": "list of latest update"
         },
         "sticker": {
             "STICKER_DESC": "Make stickers to your images. Reply to an image.",
