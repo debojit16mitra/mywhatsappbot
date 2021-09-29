@@ -49,7 +49,7 @@ if (Config.WORKTYPE == 'private') {
     
         await message.client.sendMessage(message.jid, 
                 `*🧬 Büññy®Bot Version 🧬*\n\n` + 
-                '```Installed version : 1.0.0v (Maybe Stable)```\n' +
+                '```Installed version : 1.2.0v (Maybe Stable)```\n' +
                 `\n\nCheck official website : I dont have one right now😹`
            , MessageType.text);
             
