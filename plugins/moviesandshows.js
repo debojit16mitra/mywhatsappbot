@@ -20,7 +20,7 @@ const Lang = Language.getString('scrapers');
 if (Config.WORKTYPE == 'private') {
 	
 Bunny.addCommand({ pattern: 'movie ?(.*)', desc: Lang.MOVIE_DESC ,  deleteCommand: false}, (async (message, match) => {
-	if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a name.```', MessageType.text, { quoted: message.data });
+	if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a name😒```', MessageType.text, { quoted: message.data });
 	let url = `http://www.omdbapi.com/?apikey=742b2d09&t=${match[1]}&plot=full`
 	const response = await got(url);
 	const json = JSON.parse(response.body);
@@ -51,7 +51,7 @@ Bunny.addCommand({ pattern: 'movie ?(.*)', desc: Lang.MOVIE_DESC ,  deleteComman
 else if (Config.WORKTYPE == 'public') {
 	
 Bunny.addCommand({ pattern: 'movie ?(.*)', desc: Lang.MOVIE_DESC ,  deleteCommand: false}, (async (message, match) => {
-	if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a name.```', MessageType.text, { quoted: message.data });
+	if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a name😒```', MessageType.text, { quoted: message.data });
 	let url = `http://www.omdbapi.com/?apikey=742b2d09&t=${match[1]}&plot=full`
 	const response = await got(url);
 	const json = JSON.parse(response.body);
@@ -79,10 +79,10 @@ Bunny.addCommand({ pattern: 'movie ?(.*)', desc: Lang.MOVIE_DESC ,  deleteComman
 }));
 }
 
-//-----------------------------------Anime Search-----------------------------------------------------
+//-----------------------------------Anime/Show Search-----------------------------------------------------
 Asena.addCommand({ pattern: 'anisearch ?(.*)', fromMe: false , desc: Lang.SHOW_DESC,  deleteCommand: false}, async (message, match) => {
 
-    if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a name.```', MessageType.text, { quoted: message.data });
+    if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a name😒```', MessageType.text, { quoted: message.data });
 
   await axios
       .get(`http://api.tvmaze.com/search/shows?q=${match[1]}`)
@@ -116,5 +116,4 @@ Asena.addCommand({ pattern: 'anisearch ?(.*)', fromMe: false , desc: Lang.SHOW_D
   },
 )
 
-//-----------------------------------Show Search-----------------------------------------------------
 
