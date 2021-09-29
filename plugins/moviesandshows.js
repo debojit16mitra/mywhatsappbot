@@ -120,15 +120,7 @@ Asena.addCommand({ pattern: 'anisearch ?(.*)', fromMe: false , desc: Lang.SHOW_D
         } = response.data[0].show.image
 	
 	const profileBuffer = await axios.get(original, {responseType: 'arraybuffer'})
-        const msg = `*${"🎥Name"}*: ${name}\n\n
-		     *${"✍Status"}*: ${status}\n\n
-		     *${"🌀Genres"}*: ${genres}\n\n
-		     *${"⏳Average Runtime"}*: ${averageRuntime}\n\n
-		     *${"📆Started"}*: ${premiered}\n\n
-		     *${"📅Ended"}*: ${ended}\n\n
-		     *${"⭐Average Rating"}*: ${average}\n\n
-		     *${"📋Official Site"}*: ${officialSite}\n\n
-		     *${"📃Summary"}*: ${summary}`
+        const msg = `*${"🎥Name"}*: ${name}\n\n*${"✍Status"}*: ${status}\n\n*${"🌀Genres"}*: ${genres}\n\n*${"⏳Average Runtime"}*: ${averageRuntime}\n\n*${"📆Started"}*: ${premiered}\n\n*${"📅Ended"}*: ${ended}\n\n*${"⭐Average Rating"}*: ${average}\n\n*${"📋Official Site"}*: ${officialSite}\n\n*${"📃Summary"}*: ${summary}`
        await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.image, {
           caption: msg,
         })
