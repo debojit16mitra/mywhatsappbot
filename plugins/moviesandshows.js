@@ -75,14 +75,13 @@ Bunny.addCommand({ pattern: 'movie ?(.*)', desc: Lang.MOVIE_DESC ,  deleteComman
 	msg += '🏙️Production : ' + json.Production + '\n\n';
 	msg += '🌟imdbRating : ' + json.imdbRating + '\n\n';
 	msg += '❎imdbVotes  : ' + json.imdbVotes + '```';
-	await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
 	await axios
-      .get(`http://api.tvmaze.com/search/shows?q=${match[1]}`)
+      .get(`http://www.omdbapi.com/?apikey=742b2d09&t=${match[1]}&plot=full`)
       .then(async (response) => {
 	 const {
-          original,
-        } = response.data[0].show.image
-	 const profileBuffer = await axios.get(original, {responseType: 'arraybuffer'})
+          Poster,
+        } = response.data[0].Poster
+	 const profileBuffer = await axios.get(Poster, {responseType: 'arraybuffer'})
 	 await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.image, {
           caption: msg,
         })
