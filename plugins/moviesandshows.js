@@ -76,23 +76,19 @@ Bunny.addCommand({ pattern: 'movie ?(.*)', desc: Lang.MOVIE_DESC ,  deleteComman
 	msg += '🌟imdbRating : ' + json.imdbRating + '\n\n';
 	msg += '❎imdbVotes  : ' + json.imdbVotes + '```';
 	await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
+	await axios
+      .get(`http://api.tvmaze.com/search/shows?q=${match[1]}`)
+      .then(async (response) => {
+	 const {
+          original,
+        } = response.data[0].show.image
+	 const profileBuffer = await axios.get(original, {responseType: 'arraybuffer'})
+	 await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.image, {
+          caption: msg,
+        })
+      })
 }));
 }
-/*
-Bunny.addCommand({ pattern: 'anisearch ?(.*)', desc: Lang.MOVIE_DESC ,  deleteCommand: false}, (async (message, match) => {
-	if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a name.```', MessageType.text, { quoted: message.data });
-	let url = `https://api.jikan.moe/v3/search/anime?q==${match[1]}`
-	const response = await got(url);
-	const json = JSON.parse(response.body);
-	 if (json.Response != 'True') return await message.client.sendMessage(message.jid, '*Not found!!😕*', MessageType.text, { quoted: message.data }); 
-	let msg = '```';
-	msg +=	'⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍\n' + ' ```⚕️ Büññy®Bot Movie & Series Panel ⚕️```\n' + '⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎\n';
-	msg += '🎬Title      : ' + json.title + '\n\n';
-	msg += '📅Episodes   : ' + json.episodes + '\n\n';
-	msg += '❎Image   : ' + json.image_url + '```';
-	await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
-}));
-*/
 
 //-----------------------------------Anime Search-----------------------------------------------------
 Asena.addCommand({ pattern: 'anisearch ?(.*)', fromMe: false , desc: Lang.SHOW_DESC,  deleteCommand: false}, async (message, match) => {
