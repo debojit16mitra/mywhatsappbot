@@ -136,7 +136,7 @@ const ENREP = "```You Need To Reply Any Message!```"
     }
     else if (con.WORKTYPE === 'public') {
 
-        Asena.addCommand({pattern: 'gaymeter', fromMe: false, desc: ENGAY}, (async (message, match) => {
+        Asena.addCommand({pattern: 'gaymeter', fromMe: true, desc: ENGAY}, (async (message, match) => {
 
             if (message.reply_message === false) return await message.client.sendMessage(message.jid, ENREP, MessageType.text);
 
