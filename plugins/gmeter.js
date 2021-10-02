@@ -268,9 +268,9 @@ const ENREP = "```You Need To Reply Any Message!```"
                 MessageType.video, 
                 { mimetype: Mimetype.gif, caption: `*Gay Meter Calculated* 🏳️‍🌈\n*Result:* ${r_text[i]}` }
             )
-        }));
-         }
+              }
   else if (Config.CHAT_BOT == 'false') {
  await message.client.sendMessage(message.jid, '\n👸🏻 ' + Lang2.BOT + Lang2.NOT_AVAILABLE2 , MessageType.text,{quoted: message.data});
  }
+        }));
 }
