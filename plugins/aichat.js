@@ -81,7 +81,7 @@ else if (Config.CHAT_BOT == 'false') {
 	}
 }
 
-Amdi.applyCMD({pattern: 'switch ?(.*)', fromMe: true, desc: Lang.SWITCH_DESC, deleteCommand: false}, (async(message, match) => {
+Amdi.applyCMD({pattern: 'switch ?(.*)', fromMe: true, desc: Lang.SWITCH_DESC, deleteCommand: false, dontAddCommandList: false}, (async(message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.SWITCH_MISSING, MessageType.text);
     if ((varKey = match[1].split(':')[0]) && (varValue = match[1].split(':')[1])) {
