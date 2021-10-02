@@ -5,9 +5,19 @@ const con = require('../config');
 const {MessageType, MessageOptions, Mimetype} = require('@adiwajshing/baileys');
 const fs = require('fs');
 
+//======================================heroku=========================================
+const Heroku = require('heroku-client');
+const heroku = new Heroku({
+    token: Config.HEROKU.API_KEY
+});
+
+let baseURI = '/apps/' + Config.HEROKU.APP_NAME;
+//=====================================Language=========================================
+const Language = require('../language');
+const Lang2 = Language.getString('chatbot'); //for chat_bot sleep
 const ENGAY = "Measures the percentage of gays you respond to."
 const ENREP = "```You Need To Reply Any Message!```"
-
+//=====================================Start============================================
  if (con.WORKTYPE === 'private') {
 
         Asena.addCommand({pattern: 'gaymeter', fromMe: true, desc: ENGAY}, (async (message, match) => {
@@ -136,8 +146,8 @@ const ENREP = "```You Need To Reply Any Message!```"
     }
     else if (con.WORKTYPE === 'public') {
 
-        Asena.addCommand({pattern: 'gaymeter', fromMe: true, desc: ENGAY}, (async (message, match) => {
-
+        Asena.addCommand({pattern: 'gaymeter', fromMe: false, desc: ENGAY}, (async (message, match) => {
+         if (Config.CHAT_BOT == 'true') {  
             if (message.reply_message === false) return await message.client.sendMessage(message.jid, ENREP, MessageType.text);
 
             await message.client.sendMessage(message.jid, '*Calculating* ' + '@' + message.reply_message.jid.split('@')[0] + '’s *Gay Meter.. 🏳️‍🌈*', MessageType.text, {
@@ -259,4 +269,8 @@ const ENREP = "```You Need To Reply Any Message!```"
                 { mimetype: Mimetype.gif, caption: `*Gay Meter Calculated* 🏳️‍🌈\n*Result:* ${r_text[i]}` }
             )
         }));
-    }
+         }
+  else if (Config.CHAT_BOT == 'false') {
+ await message.client.sendMessage(message.jid, '\n👸🏻 ' + Lang2.BOT + Lang2.NOT_AVAILABLE2 , MessageType.text,{quoted: message.data});
+ }
+}
