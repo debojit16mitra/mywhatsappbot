@@ -26,7 +26,7 @@ Bunny.applyCMD({ pattern: 'getfb ?(.*)', fromMe: LOL, desc: Lang.SPO_USAGE,  del
         for (var x of get_result) {
         ini_txt += `Requested Video Downloading Link\n`
         ini_txt += `(JUST CLICK ON LINK TO DOWNLOAD)\n`
-        ini_txt += `⚙️ Link : ${x.link}\n\n`
+        ini_txt += `⚙️ Link : ${x.result}\n\n`
         }
 
   await message.client.sendMessage(message.jid, '*❖ Büññy®Bot Search Engine ❖*\n' + Lang.SPOTIFY + '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n' + ini_txt,MessageType.text, {quoted: message.data});
