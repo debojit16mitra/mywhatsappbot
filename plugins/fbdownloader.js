@@ -21,7 +21,6 @@ Bunny.applyCMD({ pattern: 'getfb ?(.*)', fromMe: LOL, desc: Lang.SPO_USAGE,  del
   var apikey = await BunnyApi.api()
 
   get_result = await fetchJson('https://api.lolhuman.xyz/api/facebook?apikey=' + apikey.key + `&query=${match[1]}`)
-  get_result = get_result.result
     ini_txt = ""
         for (var x of get_result) {
         ini_txt += `Requested Video Downloading Link\n`
