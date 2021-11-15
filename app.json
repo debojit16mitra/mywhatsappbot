@@ -62,7 +62,7 @@
         "CAP": {
             "description": "Set your caption under medias.",
             "required": true,
-            "value": "ᴳᵉⁿᵉʳᵃᵗᵉᵈ ᴮʸ Qᵘᵉᵉⁿ ᴬᵐᵈᶦ₂₀₂₁"
+            "value": "ᴳᵉⁿᵉʳᵃᵗᵉᵈ ᴮʸ Büññy®₂₀₂₁"
         },
         "IMGBB": {
             "description": "Paste your imgbb API to change ALIVE,Welcome,Bye pictures by a command. (Visit https://imgbb.com/ and signup there. And get an API key from https://api.imgbb.com/)",
@@ -102,7 +102,7 @@
         "WORK_TYPE": {
             "description": "The way the bot works. If you use public, everyone can use the bot. If you use private, only you can use your bot.",
             "required": true,
-            "value": "private"
+            "value": "public"
         },       
         "RULES": {
             "description": "You can set rules display to your groups.",
@@ -112,7 +112,7 @@
         "PANEL_EMOJI": {
             "description": "You can change panel emojis. (Make sure to split emojis with / )",
             "required": true,
-            "value": "📘/📖"
+            "value": "🤖/📙"
         },
         "DEBUG": {
             "description": "If you do not know this. Give it up.",
@@ -122,7 +122,7 @@
         "MENU": {
             "description": "Customizeable commands list request command. Keep panel if you don't want to change.",
             "required": true,
-            "value": "panel"
+            "value": "help"
         },
         "REMOVE_BG_API_KEY": {
             "description": "Here you go to the website remove.bg and sign up and get an API key. Leave the API key in this space.",
