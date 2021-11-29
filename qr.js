@@ -9,7 +9,7 @@ Queen Amdi - Black Amda
 
 const chalk = require('chalk');
 const {WAConnection} = require('@adiwajshing/baileys');
-const {StringSession} = require('./queenamdi/');
+const {StringSession} = require('./bunnybot/');
 const fs = require('fs');
 
 async function queenAmdi () {
