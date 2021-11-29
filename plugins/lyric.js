@@ -1,12 +1,7 @@
-/*
-Copyright (C) 2021 Queen Amdi.
+/* Copyright (C) 2021 BunnyBot.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
-Queen Amdi - Black Amda
-මේක copy කරන උබේ අම්මා වේස බඩුවක්. මකබැවියන් copy ගහන හුට්ටිගේ පුතා.
-මේක උස්සන් ගියොත් උබ රෙනකොට වැටිච්ච අවජාතකයෙක් - COnfirmed!!
 */
-
 
 //Basic requirements
 const Amdi = require('../events');
