@@ -1,9 +1,8 @@
-/* Copyright (C) 2021 .
-
+/* Copyright (C) 2021 BunnyBot.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
-
 */
+
 const Asena = require('../events');
 const Bunny = require('../events');
 const QueenAmdi = require('queenamdi-public-2');
