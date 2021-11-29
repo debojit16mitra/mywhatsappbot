@@ -1,4 +1,9 @@
 
+/* Copyright (C) 2021 BunnyBot.
+Licensed under the  GPL-3.0 License;
+you may not use this file except in compliance with the License.
+*/
+
 const Bunny = require('../events')
 const BunnyApi = require('queenamdi-public-2');
 const { MessageType, Mimetype } = require('@adiwajshing/baileys')
