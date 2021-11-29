@@ -1,11 +1,8 @@
-/* Copyright (C) 2021 Queen Amdi.
-
+/* Copyright (C) 2021 BunnyBot.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
-
-Queen Amdi - Black Amda
 */
-
+/*
 const simpleGit = require('simple-git');
 const git = simpleGit();
 const Amdi = require('../events');
@@ -152,3 +149,4 @@ Amdi.applyCMD({pattern: 'verify$', fromMe: true, desc: Lang.VERIFY_DESC, dontAdd
         }
     }
 }));
+*/
