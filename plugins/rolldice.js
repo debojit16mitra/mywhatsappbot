@@ -1,4 +1,7 @@
-
+/* Copyright (C) 2021 BunnyBot.
+Licensed under the  GPL-3.0 License;
+you may not use this file except in compliance with the License.
+*/
 
 const Bunny = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
@@ -6,15 +9,6 @@ const con = require('../config');
 const Language = require('../language');
 const Lang = Language.getString('rolldice');
 
-/*// Descriptions
-const SEWA = "Roll dice randomly."
-
-// Sentences
-const SEWB = "🎁 ```Rolling Dice!``` 🎲"
-
-// Results
-const SEWC = "```Dice Rolled:``` "
-*/
 
     if (con.WORKTYPE === 'private') {
 
