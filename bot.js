@@ -226,7 +226,7 @@ else if (config.LANG == 'SI') {
 
 if (config.LANG == 'EN') {
     QueenAmdiCon.on('connecting', async () => {
-        console.log(`${chalk.green.bold('Queen')}${chalk.blue.bold('Amdi')}
+        console.log(`${chalk.green.bold('Büññy®')}${chalk.blue.bold('Bot')}
     ${chalk.white.bold('Version:')} ${chalk.red.bold(config.VERSION)}
 
     ${chalk.blue.italic('ℹ️ connecting to WhatsApp... Please wait...')}`);
@@ -234,7 +234,7 @@ if (config.LANG == 'EN') {
 }
 else if (config.LANG == 'SI') {
     QueenAmdiCon.on('connecting', async () => {
-        console.log(`${chalk.green.bold('Queen')}${chalk.blue.bold('Amdi')}
+        console.log(`${chalk.green.bold('Büññy®')}${chalk.blue.bold('Bot')}
     ${chalk.white.bold('Version:')} ${chalk.red.bold(config.VERSION)}
 
     ${chalk.blue.italic('ℹ️ WhatsApp වෙත සම්බන්ධ වෙමින් පවතී... කරුණාකර රැඳී සිටින්න.')}`);
