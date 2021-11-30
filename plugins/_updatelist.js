@@ -21,7 +21,9 @@ const eng = `● *UPDATE LIST (29/09/2021)* ●\n` +
 `*9.* Inroduced (.device)\n\n` +
 `*10.* Sleep mode enhanced for admins to control NSFW\n\n` +
 `*11.* Introduced (.anisearch)\n\n` +
-`*12.* Fixed (.filters) for admins\n`
+`*12.* Fixed (.filters) for admins\n\n` +
+`● *UPDATE LIST (29/09/2021)* ●\n` +
+`*1.* Added (.kuki - new aichat)\n\n`
 
       
 
