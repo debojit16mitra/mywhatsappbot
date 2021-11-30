@@ -7,7 +7,7 @@ you may not use this file except in compliance with the License.
 
 const Amdi = require('../events');
 const Config = require('../config');
-const {MessageType} = require('@adiwajshing/baileys');
+const {MessageType, Mimetype} = require('@adiwajshing/baileys');
 const fs = require("fs")
 const amdi = fs.readFileSync('./media/amdibot.mp4')  
 let LOL = Config.WORKTYPE == 'public' ? false : true
@@ -54,7 +54,7 @@ Amdi.applyCMD({pattern: Config.MENU + '?(.*)', fromMe: LOL, dontAddCommandList: 
             }
         );
         
-        await message.client.sendMessage(message.jid, amdi, MessageType.video, {mimetype: 'audio/mp4', ptt:true}, {quoted: message.data})
+        await message.client.sendMessage(message.jid, amdi, MessageType.video, {mimetype: Mimetype.mp4, ptt:true}, {quoted: message.data})
         await message.client.sendMessage(message.jid, '⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍\n' + ' ```⚕️ Büññy®Bot Help Panel ⚕️```\n' + '⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎\n' + CMD_HELP, MessageType.text, {quoted: message.data});
         
     } else {
