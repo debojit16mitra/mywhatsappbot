@@ -93,6 +93,9 @@
             "SEWB": "🎁 Rolling Dice! 🎲",
             "SEWC": "Dice Rolled:"
         },
+        "kukiai":{
+            "KUKI_DESC": "Its another AI Chatbot named KUKI."
+        },
         "evaluators": {
             "TERM_DESC": "Allow server command shell to run.",
             "GIVE_ME_CODE": "*Give me a code!*"
