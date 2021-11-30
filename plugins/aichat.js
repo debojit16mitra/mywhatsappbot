@@ -45,6 +45,20 @@ if (Config.CHAT_BOT == 'true') {
 				return await message.client.sendMessage(message.jid, Lang.NOT_FOUNDAC, MessageType.text);
 			}
 		});
+		Bunny.applyCMD({pattern: 'bot hi ?(.*)', fromMe: false, desc: Lang.BOT_DESC}, async (message, match) => {
+			if (match[1] === 'xx') return await message.reply(Lang.NEED_LOCATIONA);
+		 	return await message.client.sendMessage(message.jid, '\n*👸🏻 ' + Lang.BOT +'* ```What do you want??```\n\n' , MessageType.text,{quoted: message.data});
+			catch {
+				return await message.client.sendMessage(message.jid, Lang.NOT_FOUNDAC, MessageType.text);
+			}
+		});
+		Bunny.applyCMD({pattern: 'bot hii ?(.*)', fromMe: false, desc: Lang.BOT_DESC}, async (message, match) => {
+			if (match[1] === 'xx') return await message.reply(Lang.NEED_LOCATIONA);
+		 	return await message.client.sendMessage(message.jid, '\n*👸🏻 ' + Lang.BOT +'* ```Hii Bro```\n\n' , MessageType.text,{quoted: message.data});
+			catch {
+				return await message.client.sendMessage(message.jid, Lang.NOT_FOUNDAC, MessageType.text);
+			}
+		});
 	}
 }
 
