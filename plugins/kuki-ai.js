@@ -13,6 +13,7 @@ const { errorMessage, infoMessage } = require('../helpers');
 const Language = require('../language');
 const Lang = Language.getString('kukiai');
 
+const Heroku = require('heroku-client');
 const heroku = new Heroku({
     token: Config.HEROKU.API_KEY
 });
