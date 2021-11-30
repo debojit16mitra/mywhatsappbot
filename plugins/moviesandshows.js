@@ -161,4 +161,4 @@ Bunny.addCommand({ pattern: 'kuki ?(.*)', desc: Lang.MOVIE_DESC ,  deleteCommand
 	let msg = '👩🏻: ' + json.reply + '\n\n';
 	await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
 }));
-}
+
