@@ -45,6 +45,17 @@ if (Config.CHAT_BOT == 'true') {
 				return await message.client.sendMessage(message.jid, Lang.NOT_FOUNDAC, MessageType.text);
 			}
 		});
+		Bunny.applyCMD({pattern: 'kuki ?(.*)', fromMe: false, desc: Lang.BOT_DESC}, async (message, match) => {
+			if (match[1] === 'xx') return await message.reply(Lang.NEED_LOCATIONA);
+			const url = `https://www.kuki-api.tk/api/BunnyBot/Bunny/message=${match[1]}`;
+			try {
+				const reply = await got(url);
+				const json = JSON.parse(reply.body);
+			if (reply.statusCode === 200) return await message.client.sendMessage(message.jid, '\n*👸🏻 ' + Lang.BOT +'* ```' + json.messages[0].reply + '```\n\n' , MessageType.text,{quoted: message.data});
+			} catch {
+				return await message.client.sendMessage(message.jid, Lang.NOT_FOUNDAC, MessageType.text);
+			}
+		});
 	}
 }
 
