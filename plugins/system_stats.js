@@ -3,7 +3,7 @@ Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const Amdi = require('../events');
+const bunny = require('../events');
 const {MessageType, MessageOptions, Mimetype} = require('@adiwajshing/baileys');
 const {spawnSync} = require('child_process');
 const Config = require('../config');
@@ -17,13 +17,13 @@ const Lang = Language.getString('system_stats');
 
 if (Config.WORKTYPE == 'private') {
 
-    Amdi.applyCMD({pattern: 'alive', fromMe: true, desc: Lang.ALIVE_DESC,  deleteCommand: false}, (async (message, match) => {
+    bunny.applyCMD({pattern: 'alive', fromMe: true, desc: Lang.ALIVE_DESC,  deleteCommand: false}, (async (message, match) => {
 
         if (Config.ALIVEMSG == 'default') {
             
             var image = await axios.get (Config.ALIVE_LOGO, {responseType: 'arraybuffer'})
        
-        await message.client.sendMessage (message.jid, Buffer.from (image.data), MessageType.image, {mimetype: Mimetype.png, caption: "```👸Hey There! I'm Online now.😊```\n\n*Developers:* ```Büññy® & Black Amda```\n\n```Thank You For Using Büññy®Bot💝```"})
+        await message.client.sendMessage (message.jid, Buffer.from (image.data), MessageType.image, {mimetype: Mimetype.png, caption: "```🤭Hiieee! I`m Online now.😊```\n\n*Developers:* ```Büññy® ```\n\n```Thank You For Using Büññy®Bot💝```"})
 
     }
     else {
@@ -34,7 +34,7 @@ if (Config.WORKTYPE == 'private') {
      }
     }));
 
-    Amdi.applyCMD({pattern: 'sysd', fromMe: true, desc: Lang.SYSD_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
+    bunny.applyCMD({pattern: 'sysd', fromMe: true, desc: Lang.SYSD_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
 
         const child = spawnSync('neofetch', ['--stdout']).stdout.toString('utf-8')
         await message.sendMessage(
@@ -42,7 +42,7 @@ if (Config.WORKTYPE == 'private') {
         );
     }));
 
-    Amdi.applyCMD({pattern: 'version', fromMe: true, desc: Lang.BOT_V,  deleteCommand: false}, (async (message, match) => {    
+    bunny.applyCMD({pattern: 'version', fromMe: true, desc: Lang.BOT_V,  deleteCommand: false}, (async (message, match) => {    
     
         await message.client.sendMessage(message.jid, 
                 `*🧬 Büññy®Bot Version 🧬*\n\n` + 
@@ -54,13 +54,13 @@ if (Config.WORKTYPE == 'private') {
 }
 else if (Config.WORKTYPE == 'public') {
 
-    Amdi.applyCMD({pattern: 'alive', fromMe: false, desc: Lang.ALIVE_DESC}, (async (message, match) => {
+    bunny.applyCMD({pattern: 'alive', fromMe: false, desc: Lang.ALIVE_DESC}, (async (message, match) => {
 
         if (Config.ALIVEMSG == 'default') {
             
             var image = await axios.get (Config.ALIVE_LOGO, {responseType: 'arraybuffer'})
        
-        await message.client.sendMessage (message.jid, Buffer.from (image.data), MessageType.image, {mimetype: Mimetype.png, caption: "```👸Hey There! I'm Online now.😊```\n\n*Developers:* ```Büññy® & Black Amda```\n\n```Thank You For Using Büññy®Bot💝```"})
+        await message.client.sendMessage (message.jid, Buffer.from (image.data), MessageType.image, {mimetype: Mimetype.png, caption: "```🤭Hiieee! I`m Online now.😊```\n\n*Developers:* ```Büññy® ```\n\n```Thank You For Using Büññy®Bot💝```"})
 
     }
     else {
@@ -71,7 +71,7 @@ else if (Config.WORKTYPE == 'public') {
      }
     }));
 
-    Amdi.applyCMD({pattern: 'sysd', fromMe: true, desc: Lang.SYSD_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
+    bunny.applyCMD({pattern: 'sysd', fromMe: true, desc: Lang.SYSD_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
 
         const child = spawnSync('neofetch', ['--stdout']).stdout.toString('utf-8')
         await message.sendMessage(
@@ -79,11 +79,11 @@ else if (Config.WORKTYPE == 'public') {
         );
     }));
 
-    Amdi.applyCMD({pattern: 'version', fromMe: false, desc: Lang.BOT_V}, (async (message, match) => {    
+    bunny.applyCMD({pattern: 'version', fromMe: false, desc: Lang.BOT_V}, (async (message, match) => {    
     
         await message.client.sendMessage(message.jid, 
                 `*🧬 Büññy®Bot Version 🧬*\n\n` + 
-                '```Installed version : 1.0.0v (Maybe Stable)```\n' + 
+                '```Installed version : 1.2.0v (Maybe Stable)```\n' + 
                 `\n\nCheck official website : I dont have one right now😹`
            , MessageType.text);
             
