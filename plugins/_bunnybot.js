@@ -9,7 +9,7 @@ const Amdi = require('../events');
 const Config = require('../config');
 const {MessageType, Mimetype} = require('@adiwajshing/baileys');
 const fs = require("fs")
-const amdi = fs.readFileSync('./media/amdibot.mp4')  
+const amdi = fs.readFileSync('./media/bunnybot.mp4')  
 let LOL = Config.WORKTYPE == 'public' ? false : true
 
 const Language = require('../language');
