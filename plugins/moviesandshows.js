@@ -151,3 +151,14 @@ Asena.addCommand({ pattern: 'dxnxx ?(.*)', fromMe: false , desc: Lang.SHOW_DESC,
   },
 )
 
+//--------------------------------------------------------------------------------------------------------------------------------
+
+Bunny.addCommand({ pattern: 'kuki ?(.*)', desc: Lang.MOVIE_DESC ,  deleteCommand: false}, (async (message, match) => {
+	if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a name😒```', MessageType.text, { quoted: message.data });
+	let url = `https://www.kuki-api.tk/api/BunnyBot/Bunny/message=${match[1]}`
+	const response = await got(url);
+	const json = JSON.parse(response.body);
+	let msg = '👩🏻: ' + json.reply + '\n\n';
+	await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
+}));
+}
