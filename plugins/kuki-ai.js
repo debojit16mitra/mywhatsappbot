@@ -53,5 +53,17 @@ else if (Config.CHAT_BOT == 'false') {
     await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
   }));
     
-    
+Bunny.addCommand({ pattern: 'stz ?(.*)', desc: Lang.KUKI_DESC ,  deleteCommand: false}, (async (message, match) => {
+    if (match[1] === '') return await message.client.sendMessage(message.jid, '```Say Something😒```', MessageType.text, { quoted: message.data });
+    var apikey = await QueenAmdi.api()
+    let url = 'https://api.lolhuman.xyz/api/ytreels?apikey=' + apikey.key + `&query=${match[1]}`
+    const response = await got(url);
+    const json = JSON.parse(response.body);
+    let msg = '👩🏻: ' + json.message + '\n\n';
+        msg += '🎬Title      : ' + json.title + '\n\n';
+        msg += '🎬Title 2    : ' + json.result.title + '\n\n';
+        msg += '🎬Title 3    : ' + json.title.result + '\n\n';
+
+    await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
+  }));    
     
