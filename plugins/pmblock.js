@@ -26,7 +26,7 @@ if (Config.LANG == 'EN') {
   ON = '𝐏𝐦 𝐛𝐥𝐨𝐜𝐤 𝐟𝐞𝐚𝐭𝐮𝐫𝐞 𝐬𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 𝐨𝐩𝐞𝐧𝐞𝐝 \n          𝐩𝐥𝐞𝐚𝐬𝐞 𝐰𝐚𝐢𝐭 𝐟𝐞𝐰 𝐦𝐢𝐧𝐮𝐭𝐞 🧚‍♀️'
 }
 
-bunny.addcommand({ pattern: 'pmblock ?(.*)', fromMe: true, desc: pmblock_desc, usage: '.pmblock on / off' }, (async (message, match) => {
+bunny.addCommand({ pattern: 'pmblock ?(.*)', fromMe: true, desc: pmblock_desc, usage: '.pmblock on / off' }, (async (message, match) => {
   if (match[1] == 'off') {
     await heroku.patch(baseURI + '/config-vars', {
       body: {
@@ -45,7 +45,7 @@ bunny.addcommand({ pattern: 'pmblock ?(.*)', fromMe: true, desc: pmblock_desc, u
 }));
 
  if (Config.PM_BLOCK == 'true') {
-bunny.addcommand({on: 'text', fromMe: false, delownsewcmd: false, onlyPm: true }, (async (message, match) => {
+bunny.addCommand({on: 'text', fromMe: false, delownsewcmd: false, onlyPm: true }, (async (message, match) => {
         let regexb1ichu = new RegExp('.')
         let regexb2ichu = new RegExp('a')
         let regexb3ichu = new RegExp('e')
