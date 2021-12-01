@@ -97,7 +97,7 @@
             "KUKI_DESC": "Its another AI Chatbot named KUKI."
         },
         "ip_des":{
-            "BOT_IP": "Gives you Bots IP Address."
+            "BOT_IP": "Gives you Bots IP Address.",
             "FIND_IP": "Details about given IP Address."
 
         },
