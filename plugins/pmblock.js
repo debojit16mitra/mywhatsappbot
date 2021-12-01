@@ -1,10 +1,7 @@
 
-
+/*
 const bunny = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
-const exec = require('child_process').exec;
-const os = require("os");
-const fs = require('fs');
 const Config = require('../config')
 
 const INBO = "Private Messaging Not Allowed"
@@ -87,3 +84,4 @@ bunny.addCommand({on: 'text', fromMe: false, delownsewcmd: false, onlyPm: true }
 }));
 
 }
+*/
