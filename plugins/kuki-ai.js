@@ -42,7 +42,7 @@ else if (Config.CHAT_BOT == 'false') {
  Bunny.addCommand({ pattern: 'shrt ?(.*)', desc: Lang.KUKI_DESC ,  deleteCommand: false}, (async (message, match) => {
     if (match[1] === '') return await message.client.sendMessage(message.jid, '```Say Something😒```', MessageType.text, { quoted: message.data });
     var apikey = await QueenAmdi.api()
-    let url = `https://api.lolhuman.xyz/api/ytreels?apikey=` + apikey.key + `&query=${match[1]}`
+    let url = ('https://api.lolhuman.xyz/api/ytreels?apikey=' + apikey.key + `&query=${match[1]}`)
     const response = await got(url);
     const json = JSON.parse(response.body);
     let msg = '👩🏻: ' + json.message + '\n\n';
