@@ -35,16 +35,16 @@ if (Config.CHAT_BOT == 'true') {
     let url = `https://ipinfo.io/${match[1]}/geo`
     const response = await got(url);
     const json = JSON.parse(response.body);
-    let msg = msg +=	'⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍\n' + ' ```⚕️ Büññy®Bot IP Panel ⚕️```\n' + '⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎\n\n';
+    let msg = '⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍\n' + ' ```⚕️ Büññy®Bot IP Panel ⚕️```\n' + '⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎\n\n';
     msg += '👩🏻: Given IP: ' + json.ip + '\n\n';
     msg += 'HostName      : ' + json.hostname + '\n';
-	  msg += 'City          : ' + json.city + '\n';
-	  msg += 'Region        : ' + json.region + '\n';
-	  msg += 'Country       : ' + json.country + '\n';
+    msg += 'City          : ' + json.city + '\n';
+    msg += 'Region        : ' + json.region + '\n';
+    msg += 'Country       : ' + json.country + '\n';
     msg += 'Location      : ' + json.loc + '\n';
     msg += 'Org           : ' + json.org + '\n';
     msg += 'Pincode       : ' + json.postal + '\n';
-  	msg += 'Timezone      : ' + json.timezone + '\n';
+    msg += 'Timezone      : ' + json.timezone + '\n';
     await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
   }));
 }
