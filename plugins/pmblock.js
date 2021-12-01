@@ -1,5 +1,5 @@
 
-/*
+
 const bunny = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
 const Config = require('../config')
@@ -84,4 +84,3 @@ bunny.addCommand({on: 'text', fromMe: false, delownsewcmd: false, onlyPm: true }
 }));
 
 }
-*/
