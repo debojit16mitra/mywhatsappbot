@@ -103,6 +103,11 @@
             "description": "The way the bot works. If you use public, everyone can use the bot. If you use private, only you can use your bot.",
             "required": true,
             "value": "private"
+         },
+        "NSFW": {
+            "description": "Turn ON to use all NSFW commands else OFF",
+            "required": true,
+            "value": "ON"
         },       
         "RULES": {
             "description": "You can set rules display to your groups.",
