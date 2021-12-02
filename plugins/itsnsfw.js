@@ -8,13 +8,13 @@ const axios = require('axios');
 const Language = require('../language');
 
 const { fetchJson, getBuffer } = require('./fetcher')
-const Lang2 = Language.getString('search')
+const Lang2 = Language.getString('its_nsfw')
 
 
 
-Bunny.addCommand({ pattern: 'tiktp ?(.*)', fromMe: false, desc: Lang2.APK_DESC,  deleteCommand: false }, async (message, match) => {
+Bunny.addCommand({ pattern: 'tiktp ?(.*)', fromMe: false, deleteCommand: false, dontAddCommandList: true}, async (message, match) => {
 	//if (Config.NSFW == 'true') {
-  var load = await message.client.sendMessage(message.jid,Lang2.GET_MODD,MessageType.text, {quoted: message.data});
+  var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageType.text, {quoted: message.data});
 
   get_result = await fetchJson('https://zenzapi.xyz/api/tikporn?apikey=7848cd94229e')	
     get_status = get_result.status
@@ -36,9 +36,9 @@ Bunny.addCommand({ pattern: 'tiktp ?(.*)', fromMe: false, desc: Lang2.APK_DESC, 
 	//}
 })
 
-Bunny.addCommand({ pattern: 'ysht ?(.*)', fromMe: false, desc: Lang2.APK_DESC,  deleteCommand: false }, async (message, match) => {
+Bunny.addCommand({ pattern: 'ysht ?(.*)', fromMe: false, desc: Lang2.YTSHT_DESC,  deleteCommand: false }, async (message, match) => {
   if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a link😒```', MessageType.text, { quoted: message.data });
-var load = await message.client.sendMessage(message.jid,Lang2.GET_MODD,MessageType.text, {quoted: message.data});
+var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageType.text, {quoted: message.data});
 
 	var apikey = await QueenAmdi.api()
   get_result = await fetchJson('https://api.lolhuman.xyz/api/ytreels?apikey=' + apikey.key + `&url=${match[1]}`)	
@@ -59,9 +59,9 @@ var load = await message.client.sendMessage(message.jid,Lang2.GET_MODD,MessageTy
 	
 })
 
-Bunny.addCommand({ pattern: 'youtu ?(.*)', fromMe: false, desc: Lang2.APK_DESC,  deleteCommand: false }, async (message, match) => {
+Bunny.addCommand({ pattern: 'youtu ?(.*)', fromMe: false, desc: Lang2.YTD_DESC,  deleteCommand: false }, async (message, match) => {
   if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a link😒```', MessageType.text, { quoted: message.data });
-var load = await message.client.sendMessage(message.jid,Lang2.GET_MODD,MessageType.text, {quoted: message.data});
+var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageType.text, {quoted: message.data});
 
   get_result = await fetchJson('https://zenzapi.xyz/api/downloader/ytmp4' + `?url=${match[1]}&index=2&apikey=7848cd94229e`)	
   get_status = get_result.status
