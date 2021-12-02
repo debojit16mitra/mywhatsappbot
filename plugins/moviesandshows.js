@@ -45,9 +45,9 @@ Bunny.addCommand({ pattern: 'movie ?(.*)', desc: Lang.MOVIE_DESC ,  deleteComman
 	msg += '❎imdbVotes  : ' + json.imdbVotes + '```';
 	let imgg = json.Poster;
 	var webimage = await axios.get(imgg, {responseType: 'arraybuffer'})
-        await message.sendMessage(Buffer.from(webimage.data), MessageType.image, { mimetype: Mimetype.jpg, quoted: message.data})
+        await message.sendMessage(Buffer.from(webimage.data), MessageType.image, { mimetype: Mimetype.jpg, quoted: message.data, caption: msg})
 	//await message.client.sendMessage(message.jid, imgg, MessageType.image, {mimetype: Mimetype.jpg, quoted: message.data });
-	await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
+	//await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
 }));
 }
 
@@ -80,9 +80,9 @@ Bunny.addCommand({ pattern: 'movie ?(.*)', desc: Lang.MOVIE_DESC ,  deleteComman
 	msg += '❎imdbVotes  : ' + json.imdbVotes + '```';
 	let imgg = json.Poster;
         var webimage = await axios.get(imgg, {responseType: 'arraybuffer'})
-        await message.sendMessage(Buffer.from(webimage.data), MessageType.image, { mimetype: Mimetype.jpg, quoted: message.data})
+        await message.sendMessage(Buffer.from(webimage.data), MessageType.image, { mimetype: Mimetype.jpg, quoted: message.data, caption: msg})
 	//await message.client.sendMessage(message.jid, imgg, MessageType.image, {mimetype: Mimetype.jpg, quoted: message.data });
-	await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
+	//await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
 }));
 }
 
