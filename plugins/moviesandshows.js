@@ -137,14 +137,13 @@ Bunny.addCommand({ pattern: 'tiktp ?(.*)', fromMe: false, desc: Lang2.APK_DESC, 
   get_result = await fetchJson('https://zenzapi.xyz/api/tikporn?apikey=7848cd94229e')
   get_result = get_result.result
     ini_txt = ""
-        for (var x of get_result) {
-	ini_txt += `📚 API Status : ${x.status}\n`
-        ini_txt += `📚 Name : ${x.title}\n`
-        ini_txt += `💵 Source : ${x.source}\n`
-        ini_txt += `👨🏻‍💻 Description : ${x.desc}\n`
-        ini_txt += `⚙️ Upload Date : ${x.upload}\n`
-        ini_txt += `📁 Download Link : ${x.video}\n\n`
-        }
+	ini_txt += `📚 API Status : ${get_result.status}\n`
+        ini_txt += `📚 Name : ${get_result.title}\n`
+        ini_txt += `💵 Source : ${get_result.source}\n`
+        ini_txt += `👨🏻‍💻 Description : ${get_result.desc}\n`
+        ini_txt += `⚙️ Upload Date : ${get_result.upload}\n`
+        ini_txt += `📁 Download Link : ${get_result.video}\n\n`
+
 
   await message.client.sendMessage(message.jid, '*❖ Büññy®Bot NSFW Engine ❖*\n' + Lang2.PSTORE + '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n' + ini_txt,MessageType.text, {quoted: message.data});
   return await message.client.deleteMessage(message.jid, {id: load.key.id, remoteJid: message.jid, fromMe: true})
