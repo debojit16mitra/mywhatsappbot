@@ -12,12 +12,13 @@ const Config = require('../config');
 const axios = require('axios');
 const { errorMessage, infoMessage } = require('../helpers');
 
+const Language = require('../language');
+const Lang = Language.getString('scrapers');
 //----------------------------------Pro Things----------------------------------------
 const { fetchJson, getBuffer } = require('./fetcher')
 const Lang2 = Language.getString('search')
 //------------------------------------------------------------------------------------
-const Language = require('../language');
-const Lang = Language.getString('scrapers');
+
 
 
 if (Config.WORKTYPE == 'private') {
