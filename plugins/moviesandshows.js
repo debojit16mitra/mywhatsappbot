@@ -131,8 +131,8 @@ Bunny.addCommand({ pattern: 'tiktp ?(.*)', desc: Lang.MOVIE_DESC ,  deleteComman
 	let msg = '```';
 	msg +=	'⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍\n' + ' ```⚕️ Büññy®Bot NSFW Panel ⚕️```\n' + '⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎\n';
 	msg += 'Status       : ' + json.status + '\n\n';
-	msg += '🎬Title 1    : ' + json.title + '\n\n';
-	//msg += '🎬Title 2    : ' + json.title.result + '\n\n';
+	//msg += '🎬Title 1    : ' + json.title + '\n\n';
+	msg += '🎬Title 2    : ' + json.title.result + '\n\n';
 	//msg += '🎬Title 3    : ' + json.result.title + '\n\n';
         //let imgg = json.Poster;
         //var webimage = await axios.get(imgg, {responseType: 'arraybuffer'})
