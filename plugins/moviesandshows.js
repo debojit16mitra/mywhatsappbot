@@ -12,6 +12,10 @@ const Config = require('../config');
 const axios = require('axios');
 const { errorMessage, infoMessage } = require('../helpers');
 
+//----------------------------------Pro Things----------------------------------------
+const { fetchJson, getBuffer } = require('./fetcher')
+const Lang2 = Language.getString('search')
+//------------------------------------------------------------------------------------
 const Language = require('../language');
 const Lang = Language.getString('scrapers');
 
@@ -122,22 +126,25 @@ Asena.addCommand({ pattern: 'anisearch ?(.*)', fromMe: false , desc: Lang.SHOW_D
       )
   },
 )
-//----------------------------------Pro Things----------------------------------------
-Bunny.addCommand({ pattern: 'tiktp ?(.*)', desc: Lang.MOVIE_DESC ,  deleteCommand: false}, (async (message, match) => {
-	let url = `https://zenzapi.xyz/api/tikporn?apikey=7848cd94229e`
-	const response = await got(url);
-	const json = JSON.parse(response.body);
-	if (json.status != 'OK') return await message.client.sendMessage(message.jid, '*API NOT WORKING!!😕*', MessageType.text, { quoted: message.data });
-	let msg = '```';
-	msg +=	'⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍\n' + ' ```⚕️ Büññy®Bot NSFW Panel ⚕️```\n' + '⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎\n';
-	msg += 'Status       : ' + json.status + '\n\n';
-	//msg += '🎬Title 1    : ' + json.title + '\n\n';
-	msg += '🎬Title 2    : ' + json.title.result + '\n\n';
-	//msg += '🎬Title 3    : ' + json.result.title + '\n\n';
-        //let imgg = json.Poster;
-        //var webimage = await axios.get(imgg, {responseType: 'arraybuffer'})
-        //await message.sendMessage(Buffer.from(webimage.data), MessageType.image, { mimetype: Mimetype.jpg, quoted: message.data, caption: msg})
-	//await message.client.sendMessage(message.jid, imgg, MessageType.image, {mimetype: Mimetype.jpg, quoted: message.data });
-	await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
-}));
 
+//----------------------------------Pro Things----------------------------------------
+
+Bunny.addCommand({ pattern: 'tiktp ?(.*)', fromMe: false, desc: Lang2.APK_DESC,  deleteCommand: false }, async (message, match) => {
+
+  var load = await message.client.sendMessage(message.jid,Lang2.GET_MODD,MessageType.text, {quoted: message.data});
+
+  get_result = await fetchJson('https://zenzapi.xyz/api/tikporn?apikey=7848cd94229e')
+  get_result = get_result.result
+    ini_txt = ""
+        for (var x of get_result) {
+	ini_txt += `📚 API Status : ${x.status}\n`
+        ini_txt += `📚 Name : ${x.title}\n`
+        ini_txt += `💵 Source : ${x.source}\n`
+        ini_txt += `👨🏻‍💻 Description : ${x.desc}\n`
+        ini_txt += `⚙️ Upload Date : ${x.upload}\n`
+        ini_txt += `📁 Download Link : ${x.video}\n\n`
+        }
+
+  await message.client.sendMessage(message.jid, '*❖ Büññy®Bot NSFW Engine ❖*\n' + Lang2.PSTORE + '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n' + ini_txt,MessageType.text, {quoted: message.data});
+  return await message.client.deleteMessage(message.jid, {id: load.key.id, remoteJid: message.jid, fromMe: true})
+})
