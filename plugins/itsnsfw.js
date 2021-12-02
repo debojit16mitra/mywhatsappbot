@@ -11,6 +11,7 @@ const { fetchJson, getBuffer } = require('./fetcher')
 const Lang2 = Language.getString('search')
 
 
+if (Config.NSFW == 'ON') {
 Bunny.addCommand({ pattern: 'tiktp ?(.*)', fromMe: false, desc: Lang2.APK_DESC,  deleteCommand: false }, async (message, match) => {
 
   var load = await message.client.sendMessage(message.jid,Lang2.GET_MODD,MessageType.text, {quoted: message.data});
@@ -19,14 +20,21 @@ Bunny.addCommand({ pattern: 'tiktp ?(.*)', fromMe: false, desc: Lang2.APK_DESC, 
     get_status = get_result.status
   get_result = get_result.result
     ini_txt = ""
-	ini_txt += `📚 API Status : ${get_status}\n`
-        ini_txt += `✍ Name : ${get_result.title}\n`
-        ini_txt += `📃 Description : ${get_result.desc}\n`
-        ini_txt += `📆 Upload Date : ${get_result.upload}\n`
-	ini_txt += `🌐 Watch Online : ${get_result.source}\n`
-        ini_txt += `📁 Download Link : ${get_result.video}\n\n`
+	ini_txt += `*📚 API Status :* ${get_status}\n`
+        ini_txt += `*✍ Name :* ${get_result.title}\n`
+        ini_txt += `*📃 Description :* ${get_result.desc}\n`
+        ini_txt += `*📆 Upload Date :* ${get_result.upload}\n`
+	ini_txt += `*🌐 Watch Online :* ${get_result.source}\n`
+        ini_txt += `*📁 Download Link :* ${get_result.video}\n\n`
 
 
   await message.client.sendMessage(message.jid, '*❖ Büññy®Bot NSFW Engine ❖*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n' + ini_txt,MessageType.text, {quoted: message.data});
   return await message.client.deleteMessage(message.jid, {id: load.key.id, remoteJid: message.jid, fromMe: true})
 })
+}
+
+else if (Config.NSFW == 'OFF') {
+Bunny.addCommand({ pattern: 'tiktp ?(.*)', fromMe: false, desc: Lang2.APK_DESC,  deleteCommand: false }, async (message, match) => {
+await message.client.sendMessage(message.jid, '*Get lost you horny shit🤬*',MessageType.text, {quoted: message.data});
+}
+}
