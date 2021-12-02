@@ -52,7 +52,31 @@ var load = await message.client.sendMessage(message.jid,Lang2.GET_MODD,MessageTy
         ini_txt += `*📁 Video Download Link :* ${get_result.video}\n\n`
 
 	var webimage = await axios.get(get_thumb, {responseType: 'arraybuffer'})
-       await message.sendMessage(Buffer.from(webimage.data), MessageType.video, { mimetype: Mimetype.jpg, quoted: message.data, caption: '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n*❖ Büññy®Bot YT Shorts Engine ❖*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n```Note: 1. click (read more) then only click on download link or else link will be broken.\n2. After download change file format to .mp4```\n\n' + ini_txt})
+       await message.sendMessage(Buffer.from(webimage.data), MessageType.image, { mimetype: Mimetype.jpg, quoted: message.data, caption: '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n*❖ Büññy®Bot YT Shorts Engine ❖*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n```Note: 1. click (read more) then only click on download link or else link will be broken.\n2. After download change file format to .mp4```\n\n' + ini_txt})
+ 	
+	//await message.client.sendMessage(message.jid, '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n*❖ Büññy®Bot YT Shorts Engine ❖*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n' + ini_txt,MessageType.text, {quoted: message.data});
+	//return await message.client.deleteMessage(message.jid, {id: load.key.id, remoteJid: message.jid, fromMe: true})
+	
+})
+
+Bunny.addCommand({ pattern: 'ysht ?(.*)', fromMe: false, desc: Lang2.APK_DESC,  deleteCommand: false }, async (message, match) => {
+  if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a link😒```', MessageType.text, { quoted: message.data });
+var load = await message.client.sendMessage(message.jid,Lang2.GET_MODD,MessageType.text, {quoted: message.data});
+
+  get_result = await fetchJson('https://zenzapi.xyz/api/downloader/ytmp4?url=${match[1]}&index=2&apikey=7848cd94229e')	
+  get_status = get_result.status
+  get_result = get_result.result
+    ini_txt = ""
+	ini_txt += `*📚 API Status :* ${get_status}\n`
+        ini_txt += `*✍ Name :* ${get_result.title}\n`
+        ini_txt += `*📃 Channel Name :* ${get_result.channel}\n`
+        ini_txt += `*📁 Published On :* ${get_result.published}\n`
+	ini_txt += `*📁 Views :* ${get_result.views}\n`
+	ini_txt += `*📁 Download Link :* ${get_result.url}\n\n`
+
+
+	var webimage = await axios.get(get_result.url, {responseType: 'arraybuffer'})
+       await message.sendMessage(Buffer.from(webimage.data), MessageType.video, { mimetype: Mimetype.mp4, quoted: message.data, caption: '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n*❖ Büññy®Bot YT Shorts Engine ❖*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n```Note: 1. click (read more) then only click on download link or else link will be broken.```\n\n' + ini_txt})
  	
 	//await message.client.sendMessage(message.jid, '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n*❖ Büññy®Bot YT Shorts Engine ❖*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n' + ini_txt,MessageType.text, {quoted: message.data});
 	//return await message.client.deleteMessage(message.jid, {id: load.key.id, remoteJid: message.jid, fromMe: true})
