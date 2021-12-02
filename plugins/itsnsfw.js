@@ -36,7 +36,7 @@ Bunny.addCommand({ pattern: 'tiktp ?(.*)', fromMe: false, desc: Lang2.APK_DESC, 
 	//}
 })
 
-Bunny.addCommand({ pattern: 'tiktp ?(.*)', fromMe: false, desc: Lang2.APK_DESC,  deleteCommand: false }, async (message, match) => {
+Bunny.addCommand({ pattern: 'ysht ?(.*)', fromMe: false, desc: Lang2.APK_DESC,  deleteCommand: false }, async (message, match) => {
   if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a link😒```', MessageType.text, { quoted: message.data });
 var load = await message.client.sendMessage(message.jid,Lang2.GET_MODD,MessageType.text, {quoted: message.data});
 
@@ -48,10 +48,8 @@ var load = await message.client.sendMessage(message.jid,Lang2.GET_MODD,MessageTy
     ini_txt = ""
 	ini_txt += `*📚 API Status :* ${get_status}\n`
         ini_txt += `*✍ Name :* ${get_result.title}\n`
-        ini_txt += `*📃 Description :* ${get_result.desc}\n`
-        ini_txt += `*📆 Upload Date :* ${get_result.upload}\n`
-	ini_txt += `*🌐 Watch Online :* ${get_result.source}\n`
-        ini_txt += `*📁 Download Link :* ${get_result.video}\n\n`
+        ini_txt += `*📃 Audio Download Link :* ${get_result.audio}\n`
+        ini_txt += `*📁 Video Download Link :* ${get_result.video}\n\n`
 
 	var webimage = await axios.get(get_thumb, {responseType: 'arraybuffer'})
         await message.sendMessage(Buffer.from(webimage.data), MessageType.image, { mimetype: Mimetype.jpg, quoted: message.data, caption: '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n*❖ Büññy®Bot NSFW Engine ❖*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n' + ini_txt})
