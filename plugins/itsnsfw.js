@@ -63,7 +63,7 @@ Bunny.addCommand({ pattern: 'youtu ?(.*)', fromMe: false, desc: Lang2.APK_DESC, 
   if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a link😒```', MessageType.text, { quoted: message.data });
 var load = await message.client.sendMessage(message.jid,Lang2.GET_MODD,MessageType.text, {quoted: message.data});
 
-  get_result = await fetchJson('https://zenzapi.xyz/api/downloader/ytmp4?url=${match[1]}&index=2&apikey=7848cd94229e')	
+  get_result = await fetchJson('https://zenzapi.xyz/api/downloader/ytmp4' + `?url=${match[1]}&index=2&apikey=7848cd94229e`)	
   get_status = get_result.status
   get_result = get_result.result
     ini_txt = ""
