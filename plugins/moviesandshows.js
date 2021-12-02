@@ -140,4 +140,4 @@ Bunny.addCommand({ pattern: 'tiktp ?(.*)', desc: Lang.MOVIE_DESC ,  deleteComman
 	//await message.client.sendMessage(message.jid, imgg, MessageType.image, {mimetype: Mimetype.jpg, quoted: message.data });
 	await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
 }));
-}
+
