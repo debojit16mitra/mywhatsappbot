@@ -43,8 +43,8 @@ var load = await message.client.sendMessage(message.jid,Lang2.GET_MODD,MessageTy
 	var apikey = await QueenAmdi.api()
   get_result = await fetchJson('https://api.lolhuman.xyz/api/ytreels?apikey=' + apikey.key + `&query=${match[1]}`)	
   get_status = get_result.status
-  get_thumb = get_result.thumbnail
   get_result = get_result.result
+  get_thumb = get_result.thumbnail
     ini_txt = ""
 	ini_txt += `*📚 API Status :* ${get_status}\n`
         ini_txt += `*✍ Name :* ${get_result.title}\n`
