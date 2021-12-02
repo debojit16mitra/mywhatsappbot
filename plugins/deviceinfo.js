@@ -37,8 +37,9 @@ Asena.addCommand({pattern: 'device ?(.*)', fromMe: true, desc: Lang.DEVICE , del
 	msgs += '📸Main Camera  : ' + json.camera_pixel + '\n\n';
 	msgs += '🎥Video Reso   : ' + json.video_pixel + '\n\n';
 	msgs += '🏋️Wgt & Thknes : ' + json.weight + '```';
-    
-		if (response.statusCode === 200) return await message.client.sendMessage(message.jid, msgs, MessageType.text);
+    	let imgg = json.img;
+	var webimage = await axios.get(imgg, {responseType: 'arraybuffer'})
+		if (response.statusCode === 200) return await message.sendMessage(Buffer.from(webimage.data), MessageType.image, { mimetype: Mimetype.jpg, quoted: message.data, caption: msgs})
 	} catch {
 		return await message.client.sendMessage(message.jid, Lang.NO_DEVICE, MessageType.text);
 	}
@@ -68,8 +69,10 @@ Asena.addCommand({pattern: 'device ?(.*)', fromMe: false, desc: Lang.DEVICE , de
 	msgs += '🎥Video Reso   : ' + json.video_pixel + '\n\n';
 	msgs += '🏋️Wgt & Thknes : ' + json.weight + '```';
     
-    
-		if (response.statusCode === 200) return await message.client.sendMessage(message.jid, msgs, MessageType.text);
+   	let imgg = json.img;
+	var webimage = await axios.get(imgg, {responseType: 'arraybuffer'})
+	if (response.statusCode === 200) return await message.sendMessage(Buffer.from(webimage.data), MessageType.image, { mimetype: Mimetype.jpg, quoted: message.data, caption: msgs})
+		//if (response.statusCode === 200) return await message.client.sendMessage(message.jid, msgs, MessageType.text);
 	} catch {
 		return await message.client.sendMessage(message.jid, Lang.NO_DEVICE, MessageType.text);
 	}
