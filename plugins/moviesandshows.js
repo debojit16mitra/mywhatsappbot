@@ -139,9 +139,6 @@ Asena.addCommand({ pattern: 'tikp ?(.*)', fromMe: false , desc: Lang.SHOW_DESC, 
           caption: msg,
         })
       })
-      .catch(
-        async (err) => await message.client.sendMessage(message.jid, '*Not found!!😕*', MessageType.text, { quoted: message.data }),
-      )
   },
 )
 
