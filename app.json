@@ -107,7 +107,7 @@
         "NSFW": {
             "description": "Turn ON to use all NSFW commands else OFF",
             "required": true,
-            "value": "ON"
+            "value": "true"
         },       
         "RULES": {
             "description": "You can set rules display to your groups.",
