@@ -70,8 +70,8 @@ var load = await message.client.sendMessage(message.jid,Lang2.GET_MODD,MessageTy
 	ini_txt += `*📚 API Status :* ${get_status}\n`
         ini_txt += `*✍ Name :* ${get_result.title}\n`
         ini_txt += `*📃 Channel Name :* ${get_result.channel}\n`
-        ini_txt += `*📁 Published On :* ${get_result.published}\n`
-	ini_txt += `*📁 Views :* ${get_result.views}\n`
+        ini_txt += `*📆 Published On :* ${get_result.published}\n`
+	ini_txt += `*👀 Views :* ${get_result.views}\n`
 	ini_txt += `*📁 Download Link :* ${get_result.url}\n\n`
 
 
