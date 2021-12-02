@@ -41,7 +41,7 @@ Bunny.addCommand({ pattern: 'ysht ?(.*)', fromMe: false, desc: Lang2.APK_DESC,  
 var load = await message.client.sendMessage(message.jid,Lang2.GET_MODD,MessageType.text, {quoted: message.data});
 
 	var apikey = await QueenAmdi.api()
-  get_result = await fetchJson('https://api.lolhuman.xyz/api/ytreels?apikey=' + apikey.key + `&query=${match[1]}`)	
+  get_result = await fetchJson('https://api.lolhuman.xyz/api/ytreels?apikey=' + apikey.key + `&url=${match[1]}`)	
   get_status = get_result.status
   get_result = get_result.result
   get_thumb = get_result.thumbnail
