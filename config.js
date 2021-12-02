@@ -41,7 +41,7 @@ module.exports = {
     CAP: process.env.CAP === undefined ? 'ᴳᵉⁿᵉʳᵃᵗᵉᵈ ᴮʸ Büññy®₂₀₂₁' : process.env.CAP,
     CCLEAR_JID: process.env.CCLEAR_JID === undefined ? 'default' : process.env.CCLEAR_JID,
     WORKTYPE: process.env.WORK_TYPE === undefined ? 'public' : process.env.WORK_TYPE,
-    NFSW: process.env.NSFW === undefined ? 'ON' : process.env.NSFW,
+    NFSW: process.env.NSFW === undefined ? 'true' : process.env.NSFW,
     PROMOTEMSG: process.env.PROMOTE_MESSAGE === undefined ? 'default' : process.env.PROMOTE_MESSAGE,
     DEMOTEMSG: process.env.DEMOTE_MESSAGE === undefined ? 'default' : process.env.DEMOTE_MESSAGE,
     BANMSG: process.env.BAN_MESSAGE === undefined ? 'default' : process.env.BAN_MESSAGE,
