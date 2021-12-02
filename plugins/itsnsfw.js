@@ -28,7 +28,7 @@ Bunny.addCommand({ pattern: 'tiktp ?(.*)', fromMe: false, desc: Lang2.APK_DESC, 
         ini_txt += `*📁 Download Link :* ${get_result.video}\n\n`
 
 
-  await message.client.sendMessage(message.jid, '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n*❖ Büññy®Bot NSFW Engine ❖*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n```Note: 1. click (read more) then only click on download link or else link will be broken.\n2. After download change file format to .mp4```\n\n' + ini_txt,MessageType.text, {quoted: message.data});
+  await message.client.sendMessage(message.jid, '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n*❖ Büññy®Bot NSFW Engine ❖*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n' + ini_txt,MessageType.text, {quoted: message.data});
   return await message.client.deleteMessage(message.jid, {id: load.key.id, remoteJid: message.jid, fromMe: true})
 	//}
 	//else if (Config.NSFW == 'false') {
@@ -52,7 +52,7 @@ var load = await message.client.sendMessage(message.jid,Lang2.GET_MODD,MessageTy
         ini_txt += `*📁 Video Download Link :* ${get_result.video}\n\n`
 
 	var webimage = await axios.get(get_thumb, {responseType: 'arraybuffer'})
-       await message.sendMessage(Buffer.from(webimage.data), MessageType.video, { mimetype: Mimetype.jpg, quoted: message.data, caption: '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n*❖ Büññy®Bot YT Shorts Engine ❖*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n' + ini_txt})
+       await message.sendMessage(Buffer.from(webimage.data), MessageType.video, { mimetype: Mimetype.jpg, quoted: message.data, caption: '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n*❖ Büññy®Bot YT Shorts Engine ❖*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n```Note: 1. click (read more) then only click on download link or else link will be broken.\n2. After download change file format to .mp4```\n\n' + ini_txt})
  	
 	//await message.client.sendMessage(message.jid, '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n*❖ Büññy®Bot YT Shorts Engine ❖*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n' + ini_txt,MessageType.text, {quoted: message.data});
 	//return await message.client.deleteMessage(message.jid, {id: load.key.id, remoteJid: message.jid, fromMe: true})
