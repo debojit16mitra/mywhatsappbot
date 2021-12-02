@@ -6,7 +6,7 @@ you may not use this file except in compliance with the License.
 const Asena = require('../events');
 const Bunny = require('../events');
 const QueenAmdi = require('queenamdi-public-2');
-const { MessageType } = require('@adiwajshing/baileys');
+const { MessageType, Mimetype} = require('@adiwajshing/baileys');
 const got = require('got');
 const Config = require('../config');
 const axios = require('axios');
@@ -43,6 +43,8 @@ Bunny.addCommand({ pattern: 'movie ?(.*)', desc: Lang.MOVIE_DESC ,  deleteComman
 	msg += '🏙️Production : ' + json.Production + '\n\n';
 	msg += '🌟imdbRating : ' + json.imdbRating + '\n\n';
 	msg += '❎imdbVotes  : ' + json.imdbVotes + '```';
+	let imgg = json.Poster 'hehe\n';
+	await message.client.sendMessage(message.jid, imgg, MessageType.image, {mimetype: Mimetype.jpg, quoted: message.data });
 	await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
 }));
 }
@@ -74,6 +76,8 @@ Bunny.addCommand({ pattern: 'movie ?(.*)', desc: Lang.MOVIE_DESC ,  deleteComman
 	msg += '🏙️Production : ' + json.Production + '\n\n';
 	msg += '🌟imdbRating : ' + json.imdbRating + '\n\n';
 	msg += '❎imdbVotes  : ' + json.imdbVotes + '```';
+	let imgg = json.Poster 'hehe\n';
+	await message.client.sendMessage(message.jid, imgg, MessageType.image, {mimetype: Mimetype.jpg, quoted: message.data });
 	await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
 }));
 }
@@ -114,45 +118,4 @@ Asena.addCommand({ pattern: 'anisearch ?(.*)', fromMe: false , desc: Lang.SHOW_D
       )
   },
 )
-
-//-----------------------------------PRO THINGS-----------------------------------------------------
-Asena.addCommand({ pattern: 'tikp ?(.*)', fromMe: false , desc: Lang.SHOW_DESC,  deleteCommand: false}, async (message, match) => {
-
-  await axios
-      .get(`https://zenzapi.xyz/api/tikporn?apikey=7848cd94229e`)
-      .then(async (response) => {
-        const {
-        title,
-        source,
-	desc,
-	upload,
-	views,
-	video,
-        } = response.data[0].result
-	 const {
-          thumb,
-        } = response.data[0].result
-	
-	const profileBuffer = await axios.get(thumb, {responseType: 'arraybuffer'})
-        const msg = `*${"🎥Name"}*: ${title}\n\n*${"✍Desc"}*: ${desc}\n\n*${"🌀Upload Date"}*: ${upload}\n\n*${"⏳Views"}*: ${views}\n\n*${"📃Source"}*: ${source}\n\n*${"📆Download Link"}*: ${video}`
-       await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.image, {
-          caption: msg,
-        })
-      })
-  },
-)
-
-
-
-//--------------------------------------------------------------------------------------------------------------------------------
-/*
-Bunny.addCommand({ pattern: 'kuki ?(.*)', desc: Lang.MOVIE_DESC ,  deleteCommand: false}, (async (message, match) => {
-	if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a name😒```', MessageType.text, { quoted: message.data });
-	let url = `https://www.kuki-api.tk/api/BunnyBot/Bunny/message=${match[1]}`
-	const response = await got(url);
-	const json = JSON.parse(response.body);
-	let msg = '👩🏻: ' + json.reply + '\n\n';
-	await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
-}));
-*/
 
