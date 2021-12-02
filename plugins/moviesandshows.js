@@ -43,7 +43,7 @@ Bunny.addCommand({ pattern: 'movie ?(.*)', desc: Lang.MOVIE_DESC ,  deleteComman
 	msg += '🏙️Production : ' + json.Production + '\n\n';
 	msg += '🌟imdbRating : ' + json.imdbRating + '\n\n';
 	msg += '❎imdbVotes  : ' + json.imdbVotes + '```';
-	let imgg = json.Poster 'hehe\n';
+	let imgg = json.Poster;
 	await message.client.sendMessage(message.jid, imgg, MessageType.image, {mimetype: Mimetype.jpg, quoted: message.data });
 	await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
 }));
@@ -76,7 +76,7 @@ Bunny.addCommand({ pattern: 'movie ?(.*)', desc: Lang.MOVIE_DESC ,  deleteComman
 	msg += '🏙️Production : ' + json.Production + '\n\n';
 	msg += '🌟imdbRating : ' + json.imdbRating + '\n\n';
 	msg += '❎imdbVotes  : ' + json.imdbVotes + '```';
-	let imgg = json.Poster 'hehe\n';
+	let imgg = json.Poster;
 	await message.client.sendMessage(message.jid, imgg, MessageType.image, {mimetype: Mimetype.jpg, quoted: message.data });
 	await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
 }));
