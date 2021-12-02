@@ -4,7 +4,7 @@ you may not use this file except in compliance with the License.
 */
 
 const Asena = require('../events');
-const { MessageType } = require('@adiwajshing/baileys');
+const { MessageType, Mimetype} = require('@adiwajshing/baileys');
 const got = require('got');
 const Config = require('../config');
 const axios = require('axios');
