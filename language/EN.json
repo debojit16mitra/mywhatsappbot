@@ -73,6 +73,11 @@
             "SECOND": "Seconds",
             "AGO": "Ago```"
         },
+        "its_nsfw": {
+            "YTSHT_DESC": "Download Youtube Shorts/reels.",
+            "PLZ_WAIT": "\n```🔎 Please wait..```\n",
+            "YTD_DESC": "New way to download Youtube videos."
+        },
         "effects":{
             "NEED_WORD": "*You must enter a word*",
             "QR_DESC": "It converts text to Qr code",
