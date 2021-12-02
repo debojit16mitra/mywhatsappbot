@@ -6,6 +6,7 @@ you may not use this file except in compliance with the License.
 const Asena = require('../events');
 const Bunny = require('../events');
 const QueenAmdi = require('queenamdi-public-2');
+const axios = require('axios');
 const { MessageType, Mimetype} = require('@adiwajshing/baileys');
 const got = require('got');
 const Config = require('../config');
@@ -44,7 +45,9 @@ Bunny.addCommand({ pattern: 'movie ?(.*)', desc: Lang.MOVIE_DESC ,  deleteComman
 	msg += '🌟imdbRating : ' + json.imdbRating + '\n\n';
 	msg += '❎imdbVotes  : ' + json.imdbVotes + '```';
 	let imgg = json.Poster;
-	await message.client.sendMessage(message.jid, imgg, MessageType.image, {mimetype: Mimetype.jpg, quoted: message.data });
+	var webimage = await axios.get(imgg, {responseType: 'arraybuffer'})
+        await message.sendMessage(Buffer.from(webimage.data), MessageType.image, { mimetype: Mimetype.jpg, quoted: message.data})
+	//await message.client.sendMessage(message.jid, imgg, MessageType.image, {mimetype: Mimetype.jpg, quoted: message.data });
 	await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
 }));
 }
@@ -77,7 +80,9 @@ Bunny.addCommand({ pattern: 'movie ?(.*)', desc: Lang.MOVIE_DESC ,  deleteComman
 	msg += '🌟imdbRating : ' + json.imdbRating + '\n\n';
 	msg += '❎imdbVotes  : ' + json.imdbVotes + '```';
 	let imgg = json.Poster;
-	await message.client.sendMessage(message.jid, imgg, MessageType.image, {mimetype: Mimetype.jpg, quoted: message.data });
+        var webimage = await axios.get(imgg, {responseType: 'arraybuffer'})
+        await message.sendMessage(Buffer.from(webimage.data), MessageType.image, { mimetype: Mimetype.jpg, quoted: message.data})
+	//await message.client.sendMessage(message.jid, imgg, MessageType.image, {mimetype: Mimetype.jpg, quoted: message.data });
 	await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
 }));
 }
