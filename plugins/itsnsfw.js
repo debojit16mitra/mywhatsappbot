@@ -16,7 +16,7 @@ Bunny.addCommand({ pattern: 'tiktp ?(.*)', fromMe: false, deleteCommand: false, 
 	//if (Config.NSFW == 'true') {
   var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageType.text, {quoted: message.data});
 
-  get_result = await fetchJson('https://zenzapi.xyz/api/tikporn?apikey=7848cd94229e')	
+  get_result = await fetchJson('https://zenzapi.xyz/api/tikporn?apikey=a1d697f22f')	
     get_status = get_result.status
   get_result = get_result.result
     ini_txt = ""
