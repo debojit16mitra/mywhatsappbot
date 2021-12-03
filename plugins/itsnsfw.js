@@ -87,6 +87,7 @@ Bunny.addCommand({ pattern: 'youl ?(.*)', fromMe: false, desc: Lang2.YTD_DESC,  
   if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a link😒```', MessageType.text, { quoted: message.data });
 var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageType.text, {quoted: message.data});
 
+		var apikey = await QueenAmdi.api()
   get_result = await fetchJson('https://api.lolhuman.xyz/api/ytvideo2?apikey=' + apikey.key + `&url=${match[1]}`)
   get_status = get_result.status
   get_result = get_result.result
