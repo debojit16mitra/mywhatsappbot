@@ -48,7 +48,6 @@ var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageTy
     ini_txt = ""
 	ini_txt += `*📚 API Status :* ${get_status}\n`
         ini_txt += `*✍ Name :* ${get_result.title}\n`
-        ini_txt += `*✍ API :* ${apikey.key}\n`
         ini_txt += `*📃 Audio Download Link :* ${get_result.audio}\n`
         ini_txt += `*📁 Video Download Link :* ${get_result.video}\n\n`
 
