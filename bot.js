@@ -75,7 +75,7 @@ async function queenAmdi () {
 
 const QueenAmdiCon = new WAConnection();
 const Session = new StringSession();
-QueenAmdiCon.version = [2,2140, 12]
+QueenAmdiCon.version = [3, 3234, 9]
 setInterval(async () => { 
     var getGMTh = new Date().getHours()
     var getGMTm = new Date().getMinutes()
