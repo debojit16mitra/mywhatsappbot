@@ -111,7 +111,7 @@ Bunny.addCommand({ pattern: 'gdrive ?(.*)', fromMe: false, desc: Lang2.YTD_DESC,
 var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageType.text, {quoted: message.data});
 
 		var apikey = await QueenAmdi.api()
-  get_result = await fetchJson('https://api.xteam.xyz/dl/drive' + `?url=${match[1]}&APIKEY=05399de2c0395767`)
+  get_result = await fetchJson('https://api.xteam.xyz/dl/drive?url=' + `${match[1]}&APIKEY=05399de2c0395767`)
   get_status = get_result.status
   get_result = get_result.result
     ini_txt = ""
