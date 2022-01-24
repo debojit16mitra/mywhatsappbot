@@ -121,9 +121,9 @@ var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageTy
 	ini_txt += `*📁 Sever 2 :* ${get_result.server2}\n\n`
 
 
-	var webimage = await axios.get(get_result.link, {responseType: 'arraybuffer'})
-       await message.sendMessage(Buffer.from(webimage.data), MessageType.video, { mimetype: Mimetype.mp4, quoted: message.data, caption: '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n*❖ Büññy®Bot YT Shorts Engine ❖*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n*Note:*\n 1. click (read more) then only click on download link or else link will be broken.\n\n' + ini_txt})
-	//await message.client.sendMessage(message.jid, '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n*❖ Büññy®Bot YT Downlaod Engine ❖*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n' + ini_txt,MessageType.text, {quoted: message.data});
+	//var webimage = await axios.get(get_result.link, {responseType: 'arraybuffer'})
+      // await message.sendMessage(Buffer.from(webimage.data), MessageType.video, { mimetype: Mimetype.mp4, quoted: message.data, caption: '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n*❖ Büññy®Bot YT Shorts Engine ❖*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n*Note:*\n 1. click (read more) then only click on download link or else link will be broken.\n\n' + ini_txt})
+	await message.client.sendMessage(message.jid, '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n*❖ Büññy®Bot YT Downlaod Engine ❖*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n' + ini_txt,MessageType.text, {quoted: message.data});
 	return await message.client.deleteMessage(message.jid, {id: load.key.id, remoteJid: message.jid, fromMe: true})
 	
 })
