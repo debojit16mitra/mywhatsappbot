@@ -4,7 +4,7 @@ you may not use this file except in compliance with the License.
 */
 
 const Amdi = require('../events');
-const QueenAmdi = require('queenamdi-public-2');
+const QueenAmdi = require('queenamdi-public');
 const { MessageType, MessageOptions, Mimetype } = require('@adiwajshing/baileys');
 const fs = require('fs');
 const axios = require('axios');
