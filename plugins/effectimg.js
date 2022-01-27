@@ -7,7 +7,7 @@ const Amdi = require('../events');
 const Config = require('../config');
 const {MessageType, MessageOptions, Mimetype} = require('@adiwajshing/baileys');
 const fs = require('fs');
-const QueenAmdi = require('queenamdi-public-2');
+const QueenAmdi = require('queenamdi-public');
 const axios = require('axios');
 const request = require('request');
 
