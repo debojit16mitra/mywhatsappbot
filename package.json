@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/debojit16mitra/mywhatsappbot#readme",
   "dependencies": {
-    "queenamdi-public-2":"1.0.1",
+    "queenamdi-public": "^1.0.9",
     "queenamdi-img": "1.0.0",
     "queenamdi-textlogo-1.0.3": "1.0.3",
     "cwebp-bin": "^6.1.1",
