@@ -15,7 +15,7 @@ bunny.applyCMD({pattern: 'waifu ?(.*)', fromMe: LOL, dontAddCommandList: true,  
 
     var webimage = await axios.get('https://zenzapi.xyz/api/random/waifu?apikey=bunnybotzensapikey', { responseType: 'arraybuffer' })
 
-    await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Config.CAP, quoted: message.data, thumbnail: thumb })
+    await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Config.CAP, quoted: message.data })
 
 }));
 
