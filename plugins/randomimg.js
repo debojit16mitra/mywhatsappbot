@@ -20,9 +20,8 @@ let LOL = Config.WORKTYPE == 'public' ? false : true
 
 Amdi.applyCMD({pattern: 'bts ?(.*)', fromMe: LOL, desc: Lang.BTS_DESC,  deleteCommand: false}, (async (message, match) => {
 
-    var apikey = await QueenAmdi.api()
 
-    var webimage = await axios.get('https://api.lolhuman.xyz/api/random/bts?apikey=' + apikey.key, { responseType: 'arraybuffer' })
+    var webimage = await axios.get('https://api.xteam.xyz/randomimage/bts?APIKEY=05399de2c0395767', { responseType: 'arraybuffer' })
 
     await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Config.CAP, quoted: message.data, thumbnail: thumb })
 
@@ -31,9 +30,7 @@ Amdi.applyCMD({pattern: 'bts ?(.*)', fromMe: LOL, desc: Lang.BTS_DESC,  deleteCo
     
 Amdi.applyCMD({pattern: 'blackpink ?(.*)', fromMe: LOL, desc: Lang.BP_DESC,  deleteCommand: false}, (async (message, match) => {
 
-    var apikey = await QueenAmdi.api()
-
-    var webimage = await axios.get('https://api.lolhuman.xyz/api/random/blackpink?apikey=' + apikey.key, { responseType: 'arraybuffer' })
+    var webimage = await axios.get('https://api.xteam.xyz/randomimage/blackpink?APIKEY=05399de2c0395767', { responseType: 'arraybuffer' })
 
     await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Config.CAP, quoted: message.data, thumbnail: thumb })
 
