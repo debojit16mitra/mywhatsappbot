@@ -5,7 +5,7 @@ you may not use this file except in compliance with the License.
 
 const Asena = require('../events');
 const Bunny = require('../events');
-const QueenAmdi = require('queenamdi-public');
+const QueenAmdi = require('queenamdi-public-2');
 const { MessageType, Mimetype} = require('@adiwajshing/baileys');
 const got = require('got');
 const Config = require('../config');
