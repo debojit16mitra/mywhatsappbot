@@ -1,6 +1,6 @@
 
 const Bunny = require('../events');
-const QueenAmdi = require('queenamdi-public');
+const QueenAmdi = require('queenamdi-public-2');
 const { MessageType, Mimetype} = require('@adiwajshing/baileys');
 const got = require('got');
 const Config = require('../config');
