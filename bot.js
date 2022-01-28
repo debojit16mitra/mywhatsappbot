@@ -6,7 +6,7 @@ you may not use this file except in compliance with the License.
 const fs = require("fs");
 const path = require("path");
 const events = require("./events");
-const QueenAmdi = require('queenamdi-public');
+const QueenAmdi = require('queenamdi-public-2');
 const chalk = require('chalk');
 const axios = require('axios');
 const config = require('./config');
