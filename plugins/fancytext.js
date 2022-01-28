@@ -6,7 +6,7 @@ you may not use this file except in compliance with the License.
 
 //Basic requirements
 const Amdi = require('../events');
-const QueenAmdi = require('queenamdi-public');
+const QueenAmdi = require('queenamdi-public-2');
 const {MessageType} = require('@adiwajshing/baileys');
 const got = require("got");
 
