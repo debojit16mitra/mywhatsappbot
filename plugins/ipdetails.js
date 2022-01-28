@@ -9,7 +9,7 @@ const got = require('got');
 const Config = require('../config');
 const axios = require('axios');
 const { errorMessage, infoMessage } = require('../helpers');
-const QueenAmdi = require('queenamdi-public');
+const QueenAmdi = require('queenamdi-public-2');
 
 const Language = require('../language');
 const Lang = Language.getString('ip_des');
