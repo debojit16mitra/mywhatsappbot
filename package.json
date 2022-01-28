@@ -22,6 +22,7 @@
   "homepage": "https://github.com/debojit16mitra/mywhatsappbot#readme",
   "dependencies": {
     "@blackamda/queenamdi-web-api": "^1.0.2",
+    "queenamdi-public-2":"1.0.1",
     "queenamdi-public": "^1.1.0",
     "queenamdi-img": "1.0.0",
     "queenamdi-textlogo-1.0.3": "1.0.3",
