@@ -3,7 +3,6 @@ Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const Amdi = require('../events');
 const bunny = require('../events');
 const Config = require('../config');
 const QueenAmdi = require('queenamdi-public-2');
@@ -18,7 +17,7 @@ const Lang = Language.getString('random_pic');
 let LOL = Config.WORKTYPE == 'public' ? false : true
 
 
-Amdi.applyCMD({pattern: 'bts ?(.*)', fromMe: LOL, desc: Lang.BTS_DESC,  deleteCommand: false}, (async (message, match) => {
+bunny.applyCMD({pattern: 'bts ?(.*)', fromMe: LOL, desc: Lang.BTS_DESC,  deleteCommand: false}, (async (message, match) => {
 
 
     var webimage = await axios.get('https://api.xteam.xyz/randomimage/bts?APIKEY=05399de2c0395767', { responseType: 'arraybuffer' })
@@ -28,7 +27,7 @@ Amdi.applyCMD({pattern: 'bts ?(.*)', fromMe: LOL, desc: Lang.BTS_DESC,  deleteCo
 }));
 
     
-Amdi.applyCMD({pattern: 'blackpink ?(.*)', fromMe: LOL, desc: Lang.BP_DESC,  deleteCommand: false}, (async (message, match) => {
+bunny.applyCMD({pattern: 'blackpink ?(.*)', fromMe: LOL, desc: Lang.BP_DESC,  deleteCommand: false}, (async (message, match) => {
 
     var webimage = await axios.get('https://api.xteam.xyz/randomimage/blackpink?APIKEY=05399de2c0395767', { responseType: 'arraybuffer' })
 
@@ -37,7 +36,7 @@ Amdi.applyCMD({pattern: 'blackpink ?(.*)', fromMe: LOL, desc: Lang.BP_DESC,  del
 }));
 
 
-Amdi.applyCMD({pattern: 'rwallpaper ?(.*)', fromMe: LOL, desc: Lang.RWALL_DESC,  deleteCommand: false}, (async (message, match) => {
+bunny.applyCMD({pattern: 'rwallpaper ?(.*)', fromMe: LOL, desc: Lang.RWALL_DESC,  deleteCommand: false}, (async (message, match) => {
 
     var webimage = await axios.get(`https://source.unsplash.com/random/1920x1080`, { responseType: 'arraybuffer' })
 
