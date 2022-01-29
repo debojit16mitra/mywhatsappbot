@@ -57,14 +57,14 @@ bunny.applyCMD({pattern: 'cuddle ?(.*)', fromMe: LOL, dontAddCommandList: true, 
 
     var webimage = await axios.get('https://zenzapi.xyz/api/anime/sfw/cuddle?apikey=bunnybotzensapikey', { responseType: 'arraybuffer' })
 
-    await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.gif, caption: Config.CAP, quoted: message.data })
+    await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.video, {mimetype: Mimetype.gif, caption: Config.CAP, quoted: message.data })
 
 }));
 bunny.applyCMD({pattern: 'cudle ?(.*)', fromMe: LOL, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
 
     var webimage = await axios.get('https://zenzapi.xyz/api/anime/sfw/cuddle?apikey=bunnybotzensapikey', { responseType: 'arraybuffer' })
 
-    await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.webp, caption: Config.CAP, quoted: message.data })
+    await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.video, {mimetype: Mimetype.webp, caption: Config.CAP, quoted: message.data })
 
 }));
 
