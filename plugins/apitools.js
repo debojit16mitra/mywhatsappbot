@@ -36,7 +36,7 @@ Bunny.addCommand({ pattern: 'tiktp ?(.*)', fromMe: false, deleteCommand: false, 
 	//}
 })
 
-Bunny.addCommand({ pattern: 'ysht ?(.*)', fromMe: false, desc: Lang2.YTSHT_DESC,  deleteCommand: false }, async (message, match) => {
+Bunny.addCommand({ pattern: 'ysht ?(.*)', fromMe: false, desc: Lang2.YTSHT_DESC,  deleteCommand: false, dontAddCommandList: true }, async (message, match) => {
   if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a link😒```', MessageType.text, { quoted: message.data });
 var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageType.text, {quoted: message.data});
 
@@ -61,7 +61,7 @@ var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageTy
 	
 })
 
-Bunny.addCommand({ pattern: 'youtu ?(.*)', fromMe: false, desc: Lang2.YTD_DESC,  deleteCommand: false }, async (message, match) => {
+Bunny.addCommand({ pattern: 'youtu ?(.*)', fromMe: false, desc: Lang2.YTD_DESC,  deleteCommand: false, dontAddCommandList: true }, async (message, match) => {
   if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a link😒```', MessageType.text, { quoted: message.data });
 var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageType.text, {quoted: message.data});
 
@@ -85,7 +85,7 @@ var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageTy
 })
 
 
-Bunny.addCommand({ pattern: 'youl ?(.*)', fromMe: false, desc: Lang2.YTD_DESC,  deleteCommand: false }, async (message, match) => {
+Bunny.addCommand({ pattern: 'youl ?(.*)', fromMe: false, desc: Lang2.YTD_DESC,  deleteCommand: false, dontAddCommandList: true }, async (message, match) => {
   if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a link😒```', MessageType.text, { quoted: message.data });
 var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageType.text, {quoted: message.data});
 
@@ -107,7 +107,7 @@ var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageTy
 })
 
 //-------------------Google Drive Bypass-------------------
-Bunny.addCommand({ pattern: 'gdrive ?(.*)', fromMe: false, desc: Lang2.YTD_DESC,  deleteCommand: false }, async (message, match) => {
+Bunny.addCommand({ pattern: 'gdrive ?(.*)', fromMe: false, desc: Lang2.YTD_DESC,  deleteCommand: false, dontAddCommandList: true }, async (message, match) => {
   if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a link😒```', MessageType.text, { quoted: message.data });
 var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageType.text, {quoted: message.data});
 
@@ -130,7 +130,7 @@ var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageTy
 })
 //-------------------hentai clips-------------------
 
-Bunny.addCommand({ pattern: 'hensht ?(.*)', fromMe: false, desc: Lang2.YTD_DESC,  deleteCommand: false }, async (message, match) => {
+Bunny.addCommand({ pattern: 'hensht ?(.*)', fromMe: false, desc: Lang2.YTD_DESC,  deleteCommand: false, dontAddCommandList: true }, async (message, match) => {
 var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageType.text, {quoted: message.data});
 
   get_result = await fetchJson('https://zenzapi.xyz/downloader/hentaivid2?apikey=7848cd94229e')
