@@ -83,7 +83,7 @@ else if (Config.WORKTYPE == 'public') {
     
         await message.client.sendMessage(message.jid, 
                 `*🧬 Büññy®Bot Version 🧬*\n\n` + 
-                '```Installed version : 1.2.0v (Maybe Stable)```\n' + 
+                '```Installed version : 2.0.1v (Maybe Stable)```\n' + 
                 `\n\nCheck official website : I dont have one right now😹`
            , MessageType.text);
             
