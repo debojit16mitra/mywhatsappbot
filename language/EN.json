@@ -84,9 +84,8 @@
             "NEED_TEXT": "*Words must be entered*"
         },
         "deviceinfo":{
-            "DEVICE": "Get Any Smartphone Details",
-            "NO_DEVICE": "Cannot Get Device Details Please Check The Name You Entered",
-            "DEVICEHELP": "Get Help About Command .device"
+            "DEVICE": "Get Any Smartphone Details, use .dehelp to Get Help About Command .device",
+            "NO_DEVICE": "Cannot Get Device Details Please Check The Name You Entered"
            },
         "animesearch":{
             "DEVICE": "Get Any Smartphone Details",
