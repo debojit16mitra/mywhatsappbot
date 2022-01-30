@@ -8,7 +8,7 @@ const Language = require('../language');
 const Lang = Language.getString('scrapers');
 
 const eng = `● *Bot Admins List* ●\n` + 
-`● *Büññy®Bot Version: 1.2.0v* ●\n\n` +
+`● *Büññy®Bot Version: 2.0.1v* ●\n\n` +
 `*1. Rupam* : https://wa.me/918486752542\n` +
 `*2. Büññy®* : https://wa.me/918876708209\n`
 
