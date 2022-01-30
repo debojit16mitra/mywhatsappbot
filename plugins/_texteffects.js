@@ -27,7 +27,7 @@ if (Config.CHAT_BOT == 'true') {
   
   var webimage = await axios.get(`https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${match[1].replace(/#/g, '\n')} `, { responseType: 'arraybuffer' })
   
-  await message.sendMessage(Buffer.from(webimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: Config.CAP, thumbnail: thumb, quoted: message.data })
+  await message.sendMessage(Buffer.from(webimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: Config.CAP, quoted: message.data })
 }
   else if (Config.CHAT_BOT == 'false') {
  await message.client.sendMessage(message.jid, '\n👸🏻 ' + Lang2.BOT + Lang2.NOT_AVAILABLE2 , MessageType.text,{quoted: message.data});
@@ -41,7 +41,7 @@ if (Config.CHAT_BOT == 'true') {
   
     var webimage = await axios.get('https://zenzapi.xyz/textpro/3dchristmas?text=${match[1]}&apikey=bunnybotzensapikey', { responseType: 'arraybuffer' })
   
-    await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: Config.CAP, thumbnail: thumb, quoted: message.data })
+    await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: Config.CAP, quoted: message.data })
 }
   else if (Config.CHAT_BOT == 'false') {
  await message.client.sendMessage(message.jid, '\n👸🏻 ' + Lang2.BOT + Lang2.NOT_AVAILABLE2 , MessageType.text,{quoted: message.data});
@@ -61,7 +61,7 @@ if (Config.CHAT_BOT == 'true') {
 
     var webimage = await axios.get(`https://zenzapi.xyz/textpro/pornhub?text=${topText}&text2=${bottomText}&apikey=bunnybotzensapikey`, { responseType: 'arraybuffer' })
 
-   await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Config.CAP, thumbnail: thumb, quoted: message.data })
+   await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Config.CAP, quoted: message.data })
 }
   else if (Config.CHAT_BOT == 'false') {
  await message.client.sendMessage(message.jid, '\n👸🏻 ' + Lang2.BOT + Lang2.NOT_AVAILABLE2 , MessageType.text,{quoted: message.data});
