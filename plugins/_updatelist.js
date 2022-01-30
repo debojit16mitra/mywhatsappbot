@@ -25,7 +25,7 @@ const eng = `● *UPDATE LIST (29/09/2021)* ●\n` +
 `● *UPDATE LIST (19/11/2021)* ●\n` +
 `*1.* Added (.kuki - new aichat)\n\n` +
 `● *UPDATE LIST (30/01/2022)* ●\n` + 
-`● *Büññy®Bot Version: 2.0.1v* ●\n\n` +
+`● *Büññy®Bot Version: 2.0.1v* ●\n\n`
 
       
 
