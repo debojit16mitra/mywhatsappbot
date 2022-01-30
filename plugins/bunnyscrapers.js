@@ -102,7 +102,7 @@ if (Config.CHAT_BOT == 'true') {
 }));
   
 
-Amdi.applyCMD({ pattern: 'video ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.VIDEO_DESC}, (async (message, match) => {
+Amdi.applyCMD({ pattern: 'video ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.VIDEO_DESC, dontAddCommandList: true}, (async (message, match) => {
 if (Config.CHAT_BOT == 'true') {  
     if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_VIDEO,MessageType.text, {quoted: message.data});    
     if (match[1].includes('shorts')) return await message.client.sendMessage(message.jid,Lang.SHORTS,MessageType.text, {quoted: message.data});
@@ -137,7 +137,7 @@ if (Config.CHAT_BOT == 'true') {
 }));
 
 
-Amdi.applyCMD({pattern: 'yt ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.YT_DESC}, (async (message, match) => { 
+Amdi.applyCMD({pattern: 'yt ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.YT_DESC, dontAddCommandList: true}, (async (message, match) => { 
 if (Config.CHAT_BOT == 'true') {
     if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORDS,MessageType.text);    
     var searching = await message.client.sendMessage(message.jid,Lang.GETTING_VIDEOS,MessageType.text, {quoted: message.data});
@@ -202,7 +202,7 @@ Amdi.applyCMD({ pattern: 'fb ?(.*)', fromMe: LOL,  deleteCommand: false, desc: L
 }));
 */
 
-Amdi.applyCMD({pattern: 'trt(?: |$)(\\S*) ?(\\S*)', desc: Lang.TRANSLATE_DESC, usage: Lang.TRANSLATE_USAGE, fromMe: LOL}, (async (message, match) => {
+Amdi.applyCMD({pattern: 'trt(?: |$)(\\S*) ?(\\S*)', desc: Lang.TRANSLATE_DESC, usage: Lang.TRANSLATE_USAGE, fromMe: LOL, dontAddCommandList: true}, (async (message, match) => {
 if (Config.CHAT_BOT == 'true') {
     if (!message.reply_message) {
             return await message.client.sendMessage(message.jid,Lang.NEED_REPLY,MessageType.text,{quoted: message.data});
@@ -223,7 +223,7 @@ if (Config.CHAT_BOT == 'true') {
 }));
 
 
-Amdi.applyCMD({pattern: 'spdf ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.SPDF_DESC }, (async (message, match) => {
+Amdi.applyCMD({pattern: 'spdf ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.SPDF_DESC, dontAddCommandList: true }, (async (message, match) => {
 if (Config.CHAT_BOT == 'true') {
     if (match[1] === '') return await message.sendMessage(Lang.SPDF_LINK);
     
@@ -266,7 +266,7 @@ Amdi.applyCMD({pattern: 'currency(?: ([0-9.]+) ([a-zA-Z]+) ([a-zA-Z]+)|$|(.*))',
 }));
 */  
 
-Amdi.applyCMD({pattern: 'tts (.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.TTS_DESC}, (async (message, match) => {
+Amdi.applyCMD({pattern: 'tts (.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.TTS_DESC, dontAddCommandList: true}, (async (message, match) => {
 if (Config.CHAT_BOT == 'true') {
     if(match[1] === undefined || match[1] == "")
         return;
@@ -297,7 +297,7 @@ if (Config.CHAT_BOT == 'true') {
 }));
 
 
-Amdi.applyCMD({pattern: 'wiki ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.WIKI_DESC}, (async (message, match) => { 
+Amdi.applyCMD({pattern: 'wiki ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.WIKI_DESC, dontAddCommandList: true}, (async (message, match) => { 
 if (Config.CHAT_BOT == 'true') {
     if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORDS,MessageType.text);    
     var reply = await message.client.sendMessage(message.jid,Lang.SEARCHING,MessageType.text,{quoted: message.data});
@@ -315,7 +315,7 @@ if (Config.CHAT_BOT == 'true') {
 }));
 
 
-Amdi.applyCMD({pattern: 'img ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.IMG_DESC}, (async (message, match) => { 
+Amdi.applyCMD({pattern: 'img ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.IMG_DESC, dontAddCommandList: true}, (async (message, match) => { 
 if (Config.CHAT_BOT == 'true') {    
     if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORDS,MessageType.text,{quoted: message.data});
     gis(match[1], async (error, result) => {
@@ -338,7 +338,7 @@ if (Config.CHAT_BOT == 'true') {
 }));
 
 
-Amdi.applyCMD({pattern: 'quote ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.QUOTE_DESC}, async (message, match) => {
+Amdi.applyCMD({pattern: 'quote ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.QUOTE_DESC, dontAddCommandList: true}, async (message, match) => {
 if (Config.CHAT_BOT == 'true') {       
     if (match[1] === 'xx') return await message.reply(Lang.NEED_LOCATIONA);
     const url = `https://api.quotable.io/random`;
@@ -357,7 +357,7 @@ if (Config.CHAT_BOT == 'true') {
 });
 
 
-Amdi.applyCMD({pattern: 'wame ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.WAME_DESC}, (async (message, match) => {    
+Amdi.applyCMD({pattern: 'wame ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.WAME_DESC, dontAddCommandList: true}, (async (message, match) => {    
     if (message.reply_message !== false) {
         await message.client.sendMessage(message.jid, Lang.WAME.format(message.reply_message.jid.split('@')[0], message.reply_message.jid.replace('@s.whatsapp.net', ' ')), MessageType.text, {
                 quotedMessage: message.reply_message.data, contextInfo: {mentionedJid: [message.reply_message.jid.replace('c.us', 's.whatsapp.net')]}
@@ -374,7 +374,7 @@ Amdi.applyCMD({pattern: 'wame ?(.*)', fromMe: LOL,  deleteCommand: false, desc: 
 }));
 
 
-Amdi.applyCMD({ pattern: 'github ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Glang.GİTHUB_DESC }, async (message, match) => {
+Amdi.applyCMD({ pattern: 'github ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Glang.GİTHUB_DESC, dontAddCommandList: true }, async (message, match) => {
 
     const userName = match[1]
  
@@ -408,7 +408,7 @@ Amdi.applyCMD({ pattern: 'tk ?(.*)', fromMe: LOL,  deleteCommand: false, desc: T
 })
 */
 
-Amdi.applyCMD({ pattern: 'apk ?(.*)', fromMe: LOL, desc: Lang.APK_DESC,  deleteCommand: false}, async (message, match) => {
+Amdi.applyCMD({ pattern: 'apk ?(.*)', fromMe: LOL, desc: Lang.APK_DESC,  deleteCommand: false, dontAddCommandList: true}, async (message, match) => {
 if (Config.CHAT_BOT == 'true') {
     const pack = match[1]
           
