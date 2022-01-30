@@ -17,7 +17,7 @@ const Lang = Language.getString('deviceinfo');
 
 if (Config.WORKTYPE == 'private') {
 	
-Asena.addCommand({pattern: 'device ?(.*)', fromMe: true, desc: Lang.DEVICE , deleteCommand: false}, async (message, match) => {
+Asena.addCommand({pattern: 'device ?(.*)', fromMe: true, desc: Lang.DEVICE , deleteCommand: false, dontAddCommandList: true}, async (message, match) => {
 	const url = `https://docs-jojo.herokuapp.com/api/gsm_arena?q=${match[1]}`;
 		const response = await got(url);
     
@@ -44,7 +44,7 @@ Asena.addCommand({pattern: 'device ?(.*)', fromMe: true, desc: Lang.DEVICE , del
 
 else if (Config.WORKTYPE == 'public') {
 	
-Asena.addCommand({pattern: 'device ?(.*)', fromMe: false, desc: Lang.DEVICE , deleteCommand: false}, async (message, match) => {
+Asena.addCommand({pattern: 'device ?(.*)', fromMe: false, desc: Lang.DEVICE , deleteCommand: false, dontAddCommandList: true}, async (message, match) => {
 	const url = `https://docs-jojo.herokuapp.com/api/gsm_arena?q=${match[1]}`;
 		const response = await got(url);
     
@@ -69,7 +69,7 @@ Asena.addCommand({pattern: 'device ?(.*)', fromMe: false, desc: Lang.DEVICE , de
 	await message.sendMessage(Buffer.from(webimage.data), MessageType.image, { mimetype: Mimetype.jpg, quoted: message.data, caption: msgs})
 		//if (response.statusCode === 200) return await message.client.sendMessage(message.jid, msgs, MessageType.text);
 });
-	 Asena.addCommand({pattern: 'dehelp ?(.*)', fromMe: false, desc: Lang.DEVICEHELP }, (async (message, match) => {  
+	 Asena.addCommand({pattern: 'dehelp ?(.*)', fromMe: false, desc: Lang.DEVICEHELP, dontAddCommandList: true}, (async (message, match) => {  
        
         await message.sendMessage('*CMND* \n .device\n *DESC* \n know details of a mobilephone\n *example:* .device rog 5\n\n *CMND* \n .rdmore\n *DESC* \n add readmore after give text\n *example:* .rdmore pinky\n\n *CMND* \n.brdmore\n *DESC* \n add readmore before given text\n *example:* .brdmore pinky\n\n *CMND* \n.bgm one \n .bgm two \n *DESC* \n will change the type of reply bgm \n *example:* .bgm one (.bgm one \n is the default bgm mode - to change that use .bgm two ) ', MessageType.text,{ quoted: message.data });
         
