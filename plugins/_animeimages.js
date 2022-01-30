@@ -52,7 +52,7 @@ bunny.applyCMD({pattern: 'ranime ?(.*)', fromMe: LOL, dontAddCommandList: true, 
 }));
 
 //-----------------------------------------------------SFW GIF----------------------------------------------------------------------------------
-
+/*
 bunny.applyCMD({pattern: 'cuddle ?(.*)', fromMe: LOL, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
 
     var webimage = await axios.get('https://zenzapi.xyz/api/anime/sfw/cuddle?apikey=bunnybotzensapikey', { responseType: 'arraybuffer' })
@@ -67,7 +67,7 @@ bunny.applyCMD({pattern: 'cudle ?(.*)', fromMe: LOL, dontAddCommandList: true,  
     await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.video, {mimetype: Mimetype.webp, caption: Config.CAP, quoted: message.data })
 
 }));
-
+*/
 
 
 
