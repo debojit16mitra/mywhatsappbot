@@ -22,8 +22,10 @@ const eng = `● *UPDATE LIST (29/09/2021)* ●\n` +
 `*10.* Sleep mode enhanced for admins to control NSFW\n\n` +
 `*11.* Introduced (.anisearch)\n\n` +
 `*12.* Fixed (.filters) for admins\n\n` +
-`● *UPDATE LIST (29/09/2021)* ●\n` +
-`*1.* Added (.kuki - new aichat)\n\n`
+`● *UPDATE LIST (19/11/2021)* ●\n` +
+`*1.* Added (.kuki - new aichat)\n\n` +
+`● *UPDATE LIST (30/01/2022)* ●\n` + 
+`● *Büññy®Bot Version: 2.0.1v* ●\n\n` +
 
       
 
