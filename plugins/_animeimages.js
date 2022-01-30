@@ -299,3 +299,51 @@ if (Config.CHAT_BOT == 'true') {
  await message.client.sendMessage(message.jid, '\n👸🏻 ' + Lang2.BOT + Lang2.NOT_AVAILABLE3 , MessageType.text,{quoted: message.data});
 }
 }));
+
+bunny.applyCMD({pattern: 'nslewd ?(.*)', fromMe: LOL, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
+if (Config.CHAT_BOT == 'true') {
+
+    var webimage = await axios.get('https://zenzapi.xyz/api/anime/nsfw/lewd?apikey=bunnybotzensapikey', { responseType: 'arraybuffer' })
+
+    await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Config.CAP, quoted: message.data })
+}
+  else if (Config.CHAT_BOT == 'false') {
+ await message.client.sendMessage(message.jid, '\n👸🏻 ' + Lang2.BOT + Lang2.NOT_AVAILABLE3 , MessageType.text,{quoted: message.data});
+}
+}));
+
+bunny.applyCMD({pattern: 'nstits ?(.*)', fromMe: LOL, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
+if (Config.CHAT_BOT == 'true') {
+
+    var webimage = await axios.get('https://zenzapi.xyz/api/anime/nsfw/tits?apikey=bunnybotzensapikey', { responseType: 'arraybuffer' })
+
+    await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Config.CAP, quoted: message.data })
+}
+  else if (Config.CHAT_BOT == 'false') {
+ await message.client.sendMessage(message.jid, '\n👸🏻 ' + Lang2.BOT + Lang2.NOT_AVAILABLE3 , MessageType.text,{quoted: message.data});
+}
+}));
+
+bunny.applyCMD({pattern: 'nssolo ?(.*)', fromMe: LOL, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
+if (Config.CHAT_BOT == 'true') {
+
+    var webimage = await axios.get('https://zenzapi.xyz/api/anime/nsfw/solo?apikey=bunnybotzensapikey', { responseType: 'arraybuffer' })
+
+    await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Config.CAP, quoted: message.data })
+}
+  else if (Config.CHAT_BOT == 'false') {
+ await message.client.sendMessage(message.jid, '\n👸🏻 ' + Lang2.BOT + Lang2.NOT_AVAILABLE3 , MessageType.text,{quoted: message.data});
+}
+}));
+
+bunny.applyCMD({pattern: 'nseroyuri ?(.*)', fromMe: LOL, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
+if (Config.CHAT_BOT == 'true') {
+
+    var webimage = await axios.get('https://zenzapi.xyz/api/anime/nsfw/eroyuri?apikey=bunnybotzensapikey', { responseType: 'arraybuffer' })
+
+    await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Config.CAP, quoted: message.data })
+}
+  else if (Config.CHAT_BOT == 'false') {
+ await message.client.sendMessage(message.jid, '\n👸🏻 ' + Lang2.BOT + Lang2.NOT_AVAILABLE3 , MessageType.text,{quoted: message.data});
+}
+}));
