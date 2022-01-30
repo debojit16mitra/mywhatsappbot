@@ -3,7 +3,7 @@ Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const Asena = require('../events');
+const bunny = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
 const got = require('got');
 const Config = require('../config');
@@ -13,7 +13,7 @@ const Lang = Language.getString('weather');
 
 if (Config.WORKTYPE == 'private') {
 
-Asena.addCommand({pattern: 'compli ?(.*)', fromMe: true, desc: Lang.CM_DESC, deleteCommand: false}, async (message, match) => {
+bunny.addCommand({pattern: 'compli ?(.*)', fromMe: true, desc: Lang.CM_DESC, deleteCommand: false, dontAddCommandList: true}, async (message, match) => {
 	if (match[1] === 'xx') return await message.reply(Lang.NEED_LOCATIONA);
 	const url = `https://complimentr.com/api`;
 	try {
@@ -28,7 +28,7 @@ Asena.addCommand({pattern: 'compli ?(.*)', fromMe: true, desc: Lang.CM_DESC, del
 
 else if (Config.WORKTYPE == 'public') {
 
-Asena.addCommand({pattern: 'compli ?(.*)', fromMe: false, desc: Lang.CM_DESC, deleteCommand: false}, async (message, match) => {
+bunny.addCommand({pattern: 'compli ?(.*)', fromMe: false, desc: Lang.CM_DESC, deleteCommand: false, dontAddCommandList: true}, async (message, match) => {
 	if (match[1] === 'xx') return await message.reply(Lang.NEED_LOCATIONA);
 	const url = `https://complimentr.com/api`;
 	try {
