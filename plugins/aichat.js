@@ -20,7 +20,7 @@ let baseURI = '/apps/' + Config.HEROKU.APP_NAME;
 
 if (Config.CHAT_BOT == 'true') {
 	if (Config.WORKTYPE == 'private') {
-		Bunny.applyCMD({pattern: 'bot ?(.*)', fromMe: true, desc: Lang.BOT_DESC, deleteCommand: false}, async (message, match) => {
+		Bunny.applyCMD({pattern: 'bot ?(.*)', fromMe: true, desc: Lang.BOT_DESC, deleteCommand: false, dontAddCommandList: true}, async (message, match) => {
 			if (match[1] === 'xx') return await message.reply(Lang.NEED_LOCATIONA);
 			const url = `https://api.simsimi.net/v2/?text=${match[1]}&lc=en&cf=true`;
 			try {
@@ -34,7 +34,7 @@ if (Config.CHAT_BOT == 'true') {
 	}
 	
 	else if (Config.WORKTYPE == 'public') {
-		Bunny.applyCMD({pattern: 'bot ?(.*)', fromMe: false, desc: Lang.BOT_DESC}, async (message, match) => {
+		Bunny.applyCMD({pattern: 'bot ?(.*)', fromMe: false, desc: Lang.BOT_DESC, dontAddCommandList: true}, async (message, match) => {
 			if (match[1] === 'xx') return await message.reply(Lang.NEED_LOCATIONA);
 			const url = `https://api.simsimi.net/v2/?text=${match[1]}&lc=en&cf=true`;
 			try {
@@ -50,7 +50,7 @@ if (Config.CHAT_BOT == 'true') {
 
 else if (Config.CHAT_BOT == 'false') {
 	if (Config.WORKTYPE == 'private') {
-		Bunny.applyCMD({pattern: 'bot ?(.*)', fromMe: true, desc: Lang.BOT_DESC, deleteCommand: false}, async (message, match) => {
+		Bunny.applyCMD({pattern: 'bot ?(.*)', fromMe: true, desc: Lang.BOT_DESC, deleteCommand: false, dontAddCommandList: true}, async (message, match) => {
 			if (match[1] === 'xx') return await message.reply(Lang.NEED_LOCATIONA);
 			const url = `https://api.simsimi.net/v2/?text=${match[1]}&lc=en&cf=true`;
 			try {
@@ -64,7 +64,7 @@ else if (Config.CHAT_BOT == 'false') {
 	}
 	
 	else if (Config.WORKTYPE == 'public') {
-		Bunny.applyCMD({pattern: 'bot ?(.*)', fromMe: false, desc: Lang.BOT_DESC}, async (message, match) => {
+		Bunny.applyCMD({pattern: 'bot ?(.*)', fromMe: false, desc: Lang.BOT_DESC, dontAddCommandList: true}, async (message, match) => {
 			if (match[1] === 'xx') return await message.reply(Lang.NEED_LOCATIONA);
 			const url = `https://api.simsimi.net/v2/?text=${match[1]}&lc=en&cf=true`;
 			try {
