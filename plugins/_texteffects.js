@@ -38,8 +38,6 @@ if (Config.CHAT_BOT == 'true') {
 bunny.applyCMD({pattern: '3dchristmas ?(.*)', fromMe: LOL,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
 if (Config.CHAT_BOT == 'true') {
     if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORD);
-
-    var apikey = await QueenAmdi.api()
   
     var webimage = await axios.get('https://zenzapi.xyz/textpro/3dchristmas?text=${match[1]}&apikey=bunnybotzensapikey', { responseType: 'arraybuffer' })
   
@@ -50,7 +48,7 @@ if (Config.CHAT_BOT == 'true') {
 }  
 }));
 
-Amdi.applyCMD({pattern: 'pornhub ?(.*)', fromMe: LOL,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
+bunny.applyCMD({pattern: 'pornhub ?(.*)', fromMe: LOL,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
 if (Config.CHAT_BOT == 'true') {
     if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORD);
   
