@@ -3,7 +3,7 @@ Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const Amdi = require('../events');
+const bunny = require('../events');
 const {MessageType,Mimetype} = require('@adiwajshing/baileys');
 const fs = require('fs');
 const ffmpeg = require('fluent-ffmpeg');
@@ -16,7 +16,7 @@ const Language = require('../language');
 const Lang = Language.getString('conventer');
 
 
-Amdi.applyCMD({pattern: 'mp4audio', fromMe: LOL,  deleteCommand: false, desc: Lang.MP4TOAUDİO_DESC}, (async (message, match) => {    
+bunny.applyCMD({pattern: 'mp4audio', fromMe: LOL,  deleteCommand: false, desc: Lang.MP4TOAUDİO_DESC, dontAddCommandList: true}, (async (message, match) => {    
 
     if (message.reply_message === false) return await message.client.sendMessage(message.jid, Lang.MP4TOAUDİO_NEEDREPLY, MessageType.text, {quoted: message.data});
     var downloading = await message.client.sendMessage(message.jid,Lang.MP4TOAUDİO,MessageType.text, {quoted: message.data});
@@ -38,7 +38,7 @@ Amdi.applyCMD({pattern: 'mp4audio', fromMe: LOL,  deleteCommand: false, desc: La
 }));
 
 
-Amdi.applyCMD({pattern: 'imagesticker', fromMe: LOL,  deleteCommand: false, desc: Lang.STİCKER_DESC}, (async (message, match) => {   
+bunny.applyCMD({pattern: 'imagesticker', fromMe: LOL,  deleteCommand: false, desc: Lang.STİCKER_DESC, dontAddCommandList: true}, (async (message, match) => {   
  
     if (message.reply_message === false) return await message.client.sendMessage(message.jid, Lang.STİCKER_NEEDREPLY, MessageType.text, {quoted: message.data});
     var downloading = await message.client.sendMessage(message.jid,Lang.STİCKER,MessageType.text, {quoted: message.data});
