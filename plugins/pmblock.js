@@ -22,7 +22,7 @@ if (Config.LANG == 'EN') {
   ON = '𝐏𝐦 𝐛𝐥𝐨𝐜𝐤 𝐟𝐞𝐚𝐭𝐮𝐫𝐞 𝐬𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 𝐨𝐩𝐞𝐧𝐞𝐝 \n          𝐩𝐥𝐞𝐚𝐬𝐞 𝐰𝐚𝐢𝐭 𝐟𝐞𝐰 𝐦𝐢𝐧𝐮𝐭𝐞 🧚‍♀️'
 }
 
-bunny.addCommand({ pattern: 'pmblock ?(.*)', fromMe: true, desc: pmblock_desc, usage: '.pmblock on / off' }, (async (message, match) => {
+bunny.addCommand({ pattern: 'pmblock ?(.*)', fromMe: true, desc: pmblock_desc, usage: '.pmblock on / off', dontAddCommandList: true }, (async (message, match) => {
   if (match[1] == 'off') {
     await heroku.patch(baseURI + '/config-vars', {
       body: {
@@ -41,46 +41,21 @@ bunny.addCommand({ pattern: 'pmblock ?(.*)', fromMe: true, desc: pmblock_desc, u
 }));
 
  if (Config.PM_BLOCK == 'true') {
-bunny.addCommand({on: 'text', fromMe: false, delownsewcmd: false, onlyPm: true }, (async (message, match) => {
-        let regexb1ichu = new RegExp('.')
-        let regexb2ichu = new RegExp('a')
-        let regexb3ichu = new RegExp('e')
-        let regexb4ichu = new RegExp('i')
-        let regexb5ichu = new RegExp('o')
-        let regexb6ichu = new RegExp('u')
-
-          if (regexb1ichu.test(message.message)) {
-           
-            await message.client.sendMessage(message.jid, '*' + INBO + '*', MessageType.text);
-            await message.client.blockUser(message.jid, "add");
-          } 
-        else if (regexb2ichu.test(message.message)) {
-          
-           await message.client.sendMessage(message.jid, '*' + INBO + '*', MessageType.text);
-            await message.client.blockUser(message.jid, "add");
-          }
-         else if (regexb3ichu.test(message.message)) {
-           
-            await message.client.sendMessage(message.jid, '*' + INBO + '*', MessageType.text);
-            await message.client.blockUser(message.jid, "add");
-          }
-        else if (regexb4ichu.test(message.message)) {
-           
-            await message.client.sendMessage(message.jid, '*' + INBO + '*', MessageType.text);
-            await message.client.blockUser(message.jid, "add");
-          }
-          else if (regexb5ichu.test(message.message)) {
-           
-            await message.client.sendMessage(message.jid, '*' + INBO + '*', MessageType.text);
-            await message.client.blockUser(message.jid, "add");
-          }
-          else if (regexb6ichu.test(message.message)) {
-           
-            await message.client.sendMessage(message.jid, '*' + INBO + '*', MessageType.text);
-            await message.client.blockUser(message.jid, "add");
-          }
+	var plk = ''
+	var plk2 = ''
+	if (Config.LANG == 'EN') plk = 'Sorry Chatting in PM is not Allowed! Bye! Bye!'
+	if (Config.LANG == 'EN') plk2 = '.block'
+bunny.addCommand({on: 'text', fromMe: false, onlyPm: true , deleteCommand: false}, (async (message, match) => {
+    if (message.jid !== '918876708209@s.whatsapp.net') {
+        let regex1 = anything
+        if (!regex1.test(message.message)) {
+           await message.client.sendMessage(message.jid,plk, MessageType.text, {quoted: message.data })
+           await message.client.sendMessage(message.jid,plk2, MessageType.text);
+        }  
+    }
           
 }));
 
 }
+
 
