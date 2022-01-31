@@ -51,12 +51,12 @@
             "SEARCH": "To view the current plugin list supported to Büññy®Bot.",
             "AD_DESC": "*●Büññy®Bot ADMIN PANEL●*\n\n⚙️COMMAND: *.switch*\nℹ️DESCRIPTION:Turn on/off chat bot.\n⌨️ Example: To turn on AI chat, *.switch CHAT_BOT:true*\nTo turn on AI chat, *.switch CHAT_BOT:false*\n\n⚙️COMMAND: *.ban*\nℹ️DESCRIPTION: Remove someone from the group. Mention the message or tag a person to use command.\n\n⚙️COMMAND: *.add*\nℹ️DESCRIPTION: Adds someone to the group.\n\n⚙️COMMAND: *.mute*\nℹ️DESCRIPTION: Mute group chat. Messages can only be sent by admin. \n\n⚙️COMMAND: *.unmute*\nℹ️DESCRIPTION: Remove group chat mute. Anyone can send a message.\n\n⚙️COMMAND: *.clear*\nℹ️DESCRIPTION: Clearing chat.\n\n⚙️COMMAND: *.subject*\nℹ️DESCRIPTION: Change group name. \n\n⚙️COMMAND: *.promote*\nℹ️DESCRIPTION: Promoting members to admin.\n\n⚙️COMMAND: *.demote*\nℹ️DESCRIPTION: Demoting admins.\n\n⚙️COMMAND: *.invite*\nℹ️DESCRIPTION: Provides group invitation link.\n\n⚙️COMMAND: *.afk*\nℹ️DESCRIPTION: It turns bot bot AFK - Away From Keyboard, use .online to get online again.\n\n⚙️COMMAND: *.online*\nℹ️DESCRIPTION: It turns bot online from afk.\n\n⚙️COMMAND: *.restart*\nℹ️DESCRIPTION: Restart the bot.\n\n⚙️COMMAND: *.shutdown*\nℹ️DESCRIPTION: Shutdown the Bot.\n\n⚙️COMMAND: *.filter*\nℹ️DESCRIPTION: It adds filters. If someone writes your filter word, it sends the answer. If you write a .filter it will show your list of filters.\n\n⚙️COMMAND: *.stop*\nℹ️DESCRIPTION: Stops the filters you added earlier.\n\n⚙️COMMAND: *.welcome*\nℹ️DESCRIPTION: It sets the welcome message.\n\n⚙️COMMAND: *.goodbye*\nℹ️DESCRIPTION: Sets the goodbye  message.\n\n⚙️COMMAND: *.kickme*\nℹ️DESCRIPTION: It removes the bot from the group that provided the command.\n\n⚙️COMMAND: *.pp*\nℹ️DESCRIPTION: The photo you mention mentions the bot profile photo.\n\n⚙️COMMAND: *.block*\nℹ️DESCRIPTION: Block tagged user.\n\n⚙️COMMAND: *.unblock*\nℹ️DESCRIPTION: Unblock tagged user.\n\n⚙️COMMAND: *.jid*\nℹ️DESCRIPTION: Giving user JID.\n\n⚙️COMMAND *.tagall*\nℹ️DESCRIPTION: Tag everyone in group.\n\n⚙️COMMAND: *.dyno*\nℹ️DESCRIPTION: Showing heroku dyno hours.\n\n⚙️COMMAND: *.sysd*\nℹ️DESCRIPTION: Show system properties.\n\n⚙️COMMAND: *.Locate*\nℹ️DESCRIPTION: Gives you your location (bit buggy).\n\n⚙️COMMAND: *.log*\nℹ️DESCRIPTION: Reply to a message and it will saved it in your log.\n\n⚙️COMMAND: *.scam*\nℹ️DESCRIPTION: Scam actions for 5min.\n\n*⚠️ The above command only works for Admin, Bot and SUDO numbers.*"
         },
-        "insulting": {
+        "all_need": {
             "EXTRA_DESC": "All other Extra Commands.",
             "SEARCH_DESC": "All other Extra Commands.",
             "RANDOMIMG_DESC": "All other Extra Commands."
          },
-        "all_need": {
+        "insulting": {
             "EVINS_DESC": "Get an evil insult.",
             "EVINS": "..."
         },
