@@ -3,7 +3,7 @@ Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const Amdi = require('../events');
+const bunny = require('../events');
 const {MessageType, MessageOptions, Mimetype} = require('@adiwajshing/baileys');
 const {spawnSync} = require('child_process');
 const Config = require('../config');
@@ -16,7 +16,7 @@ const Lang = Language.getString('system_stats');
 
 
 
-Amdi.applyCMD({pattern: 'rules', fromMe: LOL,  deleteCommand: false, onlyGroup: true, desc: Lang.RULE_DESC}, (async (message, match) => {
+bunny.applyCMD({pattern: 'rules', fromMe: LOL,  deleteCommand: false, onlyGroup: true, desc: Lang.RULE_DESC}, (async (message, match) => {
 
     if (Config.RULES == 'default') {
             
