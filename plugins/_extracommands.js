@@ -30,7 +30,6 @@ hel += '*🤖Command:* ```.ss ```\n*📙Description:*' + ' ```Take Screenshot of
 hel += '*🤖Command:* ```.sticker```\n*📙Description:*' + ' ```Make Sticker of the replied Image. Reply to an image.```\n\n';
 hel += '*🤖Command:* ```.carbon```\n*📙Description:*' + ' ```Convert text into Random Carbon effect.```\n\n';
 hel += '*🤖Command:* ```.sticvid```\n*📙Description:*' + ' ```Converts animated stickers to video. Reply to an image.```\n\n';
-hel += '*🤖Command:* ```.wallpaper```\n*📙Description:*' + ' ```Gives High-Resolution Random Wallpapers.```\n\n';
 
 
 if (Config.LANG == 'EN') {
