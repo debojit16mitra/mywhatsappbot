@@ -3,7 +3,7 @@ const Config = require('../config');
 const {MessageType} = require('@adiwajshing/baileys');
 
 const Language = require('../language');
-const Lang = Language.getString('scrapers');
+const Lang = Language.getString('all_need');
 
 let hel = '⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍\n' + '```⚕️ Büññy®Bot Help Panel ⚕️```\n' + '⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍\n';
 hel += '*🤖Command:* ```.gdrive```\n*📙Description:*' + ' ```Google Drive Limit Bypass.```\n\n';
