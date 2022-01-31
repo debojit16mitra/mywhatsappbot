@@ -3,7 +3,7 @@ Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const Amdi = require('../events');
+const bunny = require('../events');
 const {MessageType, MessageOptions, Mimetype} = require('@adiwajshing/baileys');
 const Heroku = require('heroku-client');
 const Config = require('../config');
@@ -19,7 +19,7 @@ const heroku = new Heroku({
 let baseURI = '/apps/' + Config.HEROKU.APP_NAME;
 
 
-Amdi.applyCMD({pattern: 'spam ?(.*)', fromMe: true, desc: Lang.SPAM_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
+bunny.applyCMD({pattern: 'spam ?(.*)', fromMe: true, desc: Lang.SPAM_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
 
     if (message.jid === '94757405652@g.us') {
 
