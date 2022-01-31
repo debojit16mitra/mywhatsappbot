@@ -3,7 +3,7 @@ Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const Amdi = require('../events');
+const bunny = require('../events');
 const {MessageType, MessageOptions, Mimetype} = require('@adiwajshing/baileys');
 const fs = require('fs');
 const axios = require('axios');
@@ -15,7 +15,7 @@ let LOL = Config.WORKTYPE == 'public' ? false : true
 const Language = require('../language');
 const Lang = Language.getString('webss');
 
-Amdi.applyCMD({pattern: 'ss ?(.*)', fromMe: LOL, desc: Lang.SS_DESC,  deleteCommand: false}, (async (message, match) => {
+bunny.applyCMD({pattern: 'ss ?(.*)', fromMe: LOL, desc: Lang.SS_DESC,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.LİNK);
 
