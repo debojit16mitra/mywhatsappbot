@@ -16,7 +16,7 @@ const UA_DESC = "Converts sound recording to an audio File."
 const UA_NEEDREPLY = "*Must Reply to a sound recording*"
 const UA_PROC = "```Converting Sound recording To an Audio File```"
 
-Amdi.applyCMD({pattern: 'unaudio', fromMe: true, desc: UA_DESC,  deleteCommand: false}, (async (message, match) => {    
+Amdi.applyCMD({pattern: 'unaudio', fromMe: true, desc: UA_DESC,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {    
 
     if (message.reply_message === false) return await message.client.sendMessage(message.jid, UA_NEEDREPLY, MessageType.text);
         var downloading = await message.client.sendMessage(message.jid,UA_PROC,MessageType.text);
