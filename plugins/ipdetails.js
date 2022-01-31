@@ -29,7 +29,7 @@ if (Config.CHAT_BOT == 'true') {
     let msg = '👩🏻: Bots IP: ' + json.ip + '\n\n';
     await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
   }));
-  Bunny.addCommand({ pattern: 'findip ?(.*)', desc: Lang.FIND_IP ,  deleteCommand: false}, (async (message, match) => {
+  Bunny.addCommand({ pattern: 'findip ?(.*)', desc: Lang.FIND_IP ,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
     if (match[1] === '') return await message.client.sendMessage(message.jid, '```Write Your IP😒```', MessageType.text, { quoted: message.data });
     let url = `https://ipinfo.io/${match[1]}/geo`
     const response = await got(url);
@@ -48,7 +48,7 @@ if (Config.CHAT_BOT == 'true') {
   }));
 }
 else if (Config.CHAT_BOT == 'false') {
-    Bunny.addCommand({ pattern: 'findip ?(.*)', desc: Lang.FIND_IP ,  deleteCommand: false}, (async (message, match) => {
+    Bunny.addCommand({ pattern: 'findip ?(.*)', desc: Lang.FIND_IP ,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
     if (match[1] === '') return await message.client.sendMessage(message.jid, '👩🏻: Get Lost. I am not available right now!', MessageType.text, { quoted: message.data });
     let msg = '👩🏻: Get Lost. I am not available right now!\n';
     await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
