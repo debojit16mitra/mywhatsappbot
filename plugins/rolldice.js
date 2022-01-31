@@ -12,7 +12,7 @@ const Lang = Language.getString('rolldice');
 
     if (con.WORKTYPE === 'private') {
 
-        Bunny.addCommand({pattern: 'roll', fromMe: true, desc: Lang.SEWA}, (async (message, match) => {
+        Bunny.addCommand({pattern: 'roll', fromMe: true, desc: Lang.SEWA, dontAddCommandList: true}, (async (message, match) => {
 
             await message.client.sendMessage(message.jid, Lang.SEWB, MessageType.text);
             await new Promise(r => setTimeout(r, 4000));
@@ -34,7 +34,7 @@ const Lang = Language.getString('rolldice');
     }
     else if (con.WORKTYPE === 'public') {
 
-        Bunny.addCommand({pattern: 'roll', fromMe: false, desc: Lang.SEWA}, (async (message, match) => {
+        Bunny.addCommand({pattern: 'roll', fromMe: false, desc: Lang.SEWA, dontAddCommandList: true}, (async (message, match) => {
 
             await message.client.sendMessage(message.jid, Lang.SEWB, MessageType.text);
             await new Promise(r => setTimeout(r, 4000));
