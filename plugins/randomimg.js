@@ -17,7 +17,7 @@ const Lang = Language.getString('random_pic');
 let LOL = Config.WORKTYPE == 'public' ? false : true
 
 
-bunny.applyCMD({pattern: 'bts ?(.*)', fromMe: LOL, desc: Lang.BTS_DESC,  deleteCommand: false}, (async (message, match) => {
+bunny.applyCMD({pattern: 'bts ?(.*)', fromMe: LOL, desc: Lang.BTS_DESC,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
 
 
     var webimage = await axios.get('https://api.xteam.xyz/randomimage/bts?APIKEY=05399de2c0395767', { responseType: 'arraybuffer' })
@@ -27,7 +27,7 @@ bunny.applyCMD({pattern: 'bts ?(.*)', fromMe: LOL, desc: Lang.BTS_DESC,  deleteC
 }));
 
     
-bunny.applyCMD({pattern: 'blackpink ?(.*)', fromMe: LOL, desc: Lang.BP_DESC,  deleteCommand: false}, (async (message, match) => {
+bunny.applyCMD({pattern: 'blackpink ?(.*)', fromMe: LOL, desc: Lang.BP_DESC,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
 
     var webimage = await axios.get('https://api.xteam.xyz/randomimage/blackpink?APIKEY=05399de2c0395767', { responseType: 'arraybuffer' })
 
@@ -36,7 +36,7 @@ bunny.applyCMD({pattern: 'blackpink ?(.*)', fromMe: LOL, desc: Lang.BP_DESC,  de
 }));
 
 
-bunny.applyCMD({pattern: 'rwallpaper ?(.*)', fromMe: LOL, desc: Lang.RWALL_DESC,  deleteCommand: false}, (async (message, match) => {
+bunny.applyCMD({pattern: 'rwallpaper ?(.*)', fromMe: LOL, desc: Lang.RWALL_DESC,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
 
     var webimage = await axios.get(`https://source.unsplash.com/random/1920x1080`, { responseType: 'arraybuffer' })
 
