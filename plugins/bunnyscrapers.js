@@ -202,7 +202,7 @@ Amdi.applyCMD({ pattern: 'fb ?(.*)', fromMe: LOL,  deleteCommand: false, desc: L
 }));
 */
 
-Amdi.applyCMD({pattern: 'trt(?: |$)(\\S*) ?(\\S*)', desc: Lang.TRANSLATE_DESC, usage: Lang.TRANSLATE_USAGE, fromMe: LOL, dontAddCommandList: true}, (async (message, match) => {
+Amdi.applyCMD({pattern: 'trt(?: |$)(\\S*) ?(\\S*)', desc: Lang.TRANSLATE_DESC, usage: Lang.TRANSLATE_USAGE, fromMe: LOL}, (async (message, match) => {
 if (Config.CHAT_BOT == 'true') {
     if (!message.reply_message) {
             return await message.client.sendMessage(message.jid,Lang.NEED_REPLY,MessageType.text,{quoted: message.data});
@@ -266,7 +266,7 @@ Amdi.applyCMD({pattern: 'currency(?: ([0-9.]+) ([a-zA-Z]+) ([a-zA-Z]+)|$|(.*))',
 }));
 */  
 
-Amdi.applyCMD({pattern: 'tts (.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.TTS_DESC, dontAddCommandList: true}, (async (message, match) => {
+Amdi.applyCMD({pattern: 'tts (.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.TTS_DESC}, (async (message, match) => {
 if (Config.CHAT_BOT == 'true') {
     if(match[1] === undefined || match[1] == "")
         return;
@@ -409,33 +409,3 @@ Amdi.applyCMD({ pattern: 'tk ?(.*)', fromMe: LOL,  deleteCommand: false, desc: T
     await message.sendMessage(Buffer.from(tkscrap.data), MessageType.image, {caption: msg})
 })
 */
-
-Amdi.applyCMD({ pattern: 'apk ?(.*)', fromMe: LOL, desc: Lang.APK_DESC,  deleteCommand: false, dontAddCommandList: true}, async (message, match) => {
-if (Config.CHAT_BOT == 'true') {
-    const pack = match[1]
-          
-    if (!pack) return await message.client.sendMessage(message.jid,Lang.APK_NEED,MessageType.text, {quoted: message.data})
-
-    if (pack.includes('=')) {
-        var split = pack.split('=');
-        link = split[1];
-        nothing = split[0];
-    }
-    
-    var apk = await QueenAmdi.apk(link)
-    var apkinfo = await QueenAmdi.apk_info(link)
-
-    const app = await axios.get(apkinfo.ic, {responseType: 'arraybuffer'})
-    await message.client.sendMessage (message.jid, Buffer.from (app.data), MessageType.image, {mimetype: Mimetype.png, caption: Lang.APK_D + Lang.APK_N + apk.name + Lang.APK_DEV + apk.auth + Lang.APK_V + apk.vers + Lang.APK_SUM + apkinfo.summ })
-
-    var downloading = await message.client.sendMessage(message.jid,Lang.APK_DW,MessageType.text, {quoted: message.data});
-    const profileBuffer = await axios.get(apk.link, {responseType: 'arraybuffer'})
-    var uploading = await message.client.sendMessage(message.jid,Lang.APK_UP,MessageType.text, {quoted: message.data});
-    await message.client.sendMessage(message.jid,Buffer.from(profileBuffer.data), MessageType.document, {filename: apk.name + '.apk', mimetype: 'application/vnd.android.package-archive', quoted: message.data})
-    await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
-    return await message.client.deleteMessage(message.jid, {id: uploading.key.id, remoteJid: message.jid, fromMe: true})
-   }
-  else if (Config.CHAT_BOT == 'false') {
- await message.client.sendMessage(message.jid, '\n👸🏻 ' + Lang2.BOT + Lang2.NOT_AVAILABLE2 , MessageType.text,{quoted: message.data});
-}
-})
