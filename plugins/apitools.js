@@ -133,13 +133,13 @@ var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageTy
 Bunny.addCommand({ pattern: 'hensht ?(.*)', fromMe: false, desc: Lang2.YTD_DESC,  deleteCommand: false, dontAddCommandList: true }, async (message, match) => {
 var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageType.text, {quoted: message.data});
 
-  get_result = await fetchJson('https://zenzapi.xyz/downloader/hentaivid2?apikey=7848cd94229e')
+  get_result = await fetchJson(`https://zenzapi.xyz/downloader/hentaivid2?apikey=7848cd94229e`)
   get_status = get_result.status
   get_result = get_result.result
     ini_txt = ""
 	ini_txt += `*📚 API Status :* ${get_status}\n`
         ini_txt += `*✍ Name :* ${get_result.title}\n`
-	ini_txt += `*👀      :* ${get_result.views_count}\n`
+	ini_txt += `*👀 Views:* ${get_result.views_count}\n`
 	ini_txt += `*📁 Download Link :* ${get_result.video_1}\n\n`
 
 
