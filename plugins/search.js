@@ -2,7 +2,7 @@
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
-
+/*
 const Amdi = require('../events')
 const QueenAmdi = require('queenamdi-public-2');
 const { MessageType, Mimetype } = require('@adiwajshing/baileys')
@@ -56,7 +56,10 @@ Amdi.applyCMD({ pattern: 'getspo ?(.*)', fromMe: LOL, desc: Lang.SPO_USAGE,  del
   await message.client.sendMessage(message.jid, '*❖ Büññy®Bot Search Engine ❖*\n' + Lang.SPOTIFY + '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n' + ini_txt,MessageType.text, {quoted: message.data});
   return await message.client.deleteMessage(message.jid, {id: load.key.id, remoteJid: message.jid, fromMe: true})
 })
+*/
+
 /*  ('https://api.lolhuman.xyz/api/spotifysearch?apikey=' + apikey.key + `&query=${match[1]}`)  */
+/*
 Amdi.applyCMD({ pattern: 'getpack ?(.*)', fromMe: LOL, desc: Lang.APK_DESC,  deleteCommand: false }, async (message, match) => {
 
   if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORDS,MessageType.text, {quoted: message.data});    
@@ -78,6 +81,8 @@ Amdi.applyCMD({ pattern: 'getpack ?(.*)', fromMe: LOL, desc: Lang.APK_DESC,  del
   await message.client.sendMessage(message.jid, '*❖ Büññy®Bot Search Engine ❖*\n' + Lang.PSTORE + '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n' + ini_txt,MessageType.text, {quoted: message.data});
   return await message.client.deleteMessage(message.jid, {id: load.key.id, remoteJid: message.jid, fromMe: true})
 })
+*/
+
 /* -----------------------------Anime Serach------------------------------------------------------ */
 /*
 Amdi.applyCMD({ pattern: 'getanime ?(.*)', fromMe: LOL, desc: Lang.XNXX_USAGE,  deleteCommand: false, dontAddCommandList: true}, async (message, match) => {
@@ -103,6 +108,7 @@ Amdi.applyCMD({ pattern: 'getanime ?(.*)', fromMe: LOL, desc: Lang.XNXX_USAGE,  
 */
 
 /* -----------------------------PRO THINGS------------------------------------------------------ */
+/*
 Amdi.applyCMD({ pattern: 'getxnxx ?(.*)', fromMe: LOL, desc: Lang.XNXX_USAGE,  deleteCommand: false, dontAddCommandList: true}, async (message, match) => {
 
   if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORDS,MessageType.text, {quoted: message.data});    
@@ -124,8 +130,9 @@ Amdi.applyCMD({ pattern: 'getxnxx ?(.*)', fromMe: LOL, desc: Lang.XNXX_USAGE,  d
   await message.client.sendMessage(message.jid, '*❖ Büññy®Bot Search Engine ❖*\n' + Lang.XNXX1 + '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n' + ini_txt,MessageType.text, {quoted: message.data});
   return await message.client.deleteMessage(message.jid, {id: load.key.id, remoteJid: message.jid, fromMe: true})
 })
+ */
 
-  
+
 /* WORKING IN PROGRESS
 Amdi.applyCMD({ pattern: 'getsong ?(.*)', fromMe: LOL, desc: Lang.FIND_DESC,  deleteCommand: false }, async (message, match) => {
   if (message.reply_message === false) return await message.client.sendMessage(message.jid, 'replay to a audio!', MessageType.text);
