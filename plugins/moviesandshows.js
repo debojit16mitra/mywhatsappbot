@@ -20,7 +20,7 @@ const Lang = Language.getString('scrapers');
 
 if (Config.WORKTYPE == 'private') {
 	
-Bunny.addCommand({ pattern: 'movie ?(.*)', desc: Lang.MOVIE_DESC ,  deleteCommand: false}, (async (message, match) => {
+Bunny.addCommand({ pattern: 'movie ?(.*)', desc: Lang.MOVIE_DESC ,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
 	if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a name😒```', MessageType.text, { quoted: message.data });
 	let url = `http://www.omdbapi.com/?apikey=742b2d09&t=${match[1]}&plot=full`
 	const response = await got(url);
@@ -55,7 +55,7 @@ Bunny.addCommand({ pattern: 'movie ?(.*)', desc: Lang.MOVIE_DESC ,  deleteComman
 
 else if (Config.WORKTYPE == 'public') {
 	
-Bunny.addCommand({ pattern: 'movie ?(.*)', desc: Lang.MOVIE_DESC ,  deleteCommand: false}, (async (message, match) => {
+Bunny.addCommand({ pattern: 'movie ?(.*)', desc: Lang.MOVIE_DESC ,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
 	if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a name😒```', MessageType.text, { quoted: message.data });
 	let url = `http://www.omdbapi.com/?apikey=742b2d09&t=${match[1]}&plot=full`
 	const response = await got(url);
@@ -89,7 +89,7 @@ Bunny.addCommand({ pattern: 'movie ?(.*)', desc: Lang.MOVIE_DESC ,  deleteComman
 }
 
 //-----------------------------------Anime/Show Search-----------------------------------------------------
-Asena.addCommand({ pattern: 'anisearch ?(.*)', fromMe: false , desc: Lang.SHOW_DESC,  deleteCommand: false}, async (message, match) => {
+Asena.addCommand({ pattern: 'anisearch ?(.*)', fromMe: false , desc: Lang.SHOW_DESC,  deleteCommand: false, dontAddCommandList: true}, async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a name😒```', MessageType.text, { quoted: message.data });
 
