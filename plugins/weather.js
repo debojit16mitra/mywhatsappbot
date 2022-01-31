@@ -14,7 +14,7 @@ const Lang = Language.getString('weather');
 
 if (Config.WORKTYPE == 'private') {
 
-    Amdi.applyCMD({pattern: 'weather ?(.*)', desc: Lang.WEATHER_DESC, fromMe: true,  deleteCommand: false}, async (message, match) => {
+    Amdi.applyCMD({pattern: 'weather ?(.*)', desc: Lang.WEATHER_DESC, fromMe: true,  deleteCommand: false, dontAddCommandList: true}, async (message, match) => {
 
     	if (match[1] === '') return await message.reply(Lang.NEED_LOCATION);
 	    const url = `http://api.openweathermap.org/data/2.5/weather?q=${match[1]}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=tr`;
@@ -34,7 +34,7 @@ if (Config.WORKTYPE == 'private') {
 }
 if (Config.WORKTYPE == 'public') {
 
-    Amdi.applyCMD({pattern: 'weather ?(.*)', desc: Lang.WEATHER_DESC, fromMe: false}, async (message, match) => {
+    Amdi.applyCMD({pattern: 'weather ?(.*)', desc: Lang.WEATHER_DESC, fromMe: false, dontAddCommandList: true}, async (message, match) => {
 
         if (match[1] === '') return await message.reply(Lang.NEED_LOCATION);
 	    const url = `http://api.openweathermap.org/data/2.5/weather?q=${match[1]}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=tr`;
