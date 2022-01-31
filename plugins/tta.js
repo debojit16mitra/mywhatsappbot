@@ -2,7 +2,7 @@
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
-
+/*
 const Amdi = require('../events');
 const {MessageType,Mimetype} = require('@adiwajshing/baileys');
 const Config = require('../config');
@@ -34,3 +34,4 @@ Amdi.applyCMD({pattern: 'tta (.*)', fromMe: false, dontAddCommandList: true }, (
     });
     await message.client.sendMessage(message.jid,buffer, MessageType.audio, {mimetype: Mimetype.mp4Audio, ptt: false});
 }));
+*/
