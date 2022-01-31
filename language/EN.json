@@ -53,8 +53,8 @@
         },
         "all_need": {
             "EXTRA_DESC": "All other Extra Commands.",
-            "SEARCH_DESC": "All other Extra Commands.",
-            "RANDOMIMG_DESC": "All other Extra Commands."
+            "SEARCH_DESC": "All Search Commands.",
+            "RANDOMIMG_DESC": "All other Random Images Commands."
          },
         "insulting": {
             "EVINS_DESC": "Get an evil insult.",
