@@ -25,7 +25,10 @@ const eng = `● *UPDATE LIST (29/09/2021)* ●\n` +
 `● *UPDATE LIST (19/11/2021)* ●\n` +
 `*1.* Added (.kuki - new aichat)\n\n` +
 `● *UPDATE LIST (30/01/2022)* ●\n` + 
-`● *Büññy®Bot Version: 2.0.1v* ●\n\n`
+`● *Büññy®Bot Version: 2.0.1v* ●\n\n` +
+`*1.* .help panel distributed and revised.\n\n` +
+`*2.* All Text to effect commands are revised.\n\n` +
+`*3.* All anime (ssfw/nsfw) all are revised.\n\n`
 
       
 
