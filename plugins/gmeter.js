@@ -3,7 +3,7 @@ Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const Asena = require('../events');
+const bunny = require('../events');
 const con = require('../config');
 const {MessageType, MessageOptions, Mimetype} = require('@adiwajshing/baileys');
 const fs = require('fs');
@@ -24,7 +24,7 @@ const ENREP = "```You Need To Reply Any Message!```"
 //=====================================Start============================================
  if (con.WORKTYPE === 'private') {
 
-        Asena.addCommand({pattern: 'gaymeter', fromMe: true, desc: ENGAY}, (async (message, match) => {
+        bunny.addCommand({pattern: 'gaymeter', fromMe: true, desc: ENGAY, dontAddCommandList: true}, (async (message, match) => {
 
             if (message.reply_message === false) return await message.client.sendMessage(message.jid, ENREP, MessageType.text);
 
@@ -150,7 +150,7 @@ const ENREP = "```You Need To Reply Any Message!```"
     }
     else if (con.WORKTYPE === 'public') {
 
-        Asena.addCommand({pattern: 'gaymeter', fromMe: false, desc: ENGAY}, (async (message, match) => {
+        bunny.addCommand({pattern: 'gaymeter', fromMe: false, desc: ENGAY, dontAddCommandList: true}, (async (message, match) => {
          if (Config.CHAT_BOT == 'true') {  
             if (message.reply_message === false) return await message.client.sendMessage(message.jid, ENREP, MessageType.text);
 
