@@ -3,7 +3,7 @@ Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const Amdi = require('../events');
+const bunny = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
 const Config = require('../config');
 
@@ -18,7 +18,7 @@ async function checkImAdmin(message, user = message.client.user.jid) {
     return sonuc.includes(true);
 }
 
-Amdi.applyCMD({pattern: 'tagall ?(.*)', fromMe: true,  deleteCommand: false,  desc: Lang.TAGALL_DESC, dontAddCommandList: true}, (async (message, match) => {
+bunny.applyCMD({pattern: 'tagall ?(.*)', fromMe: true,  deleteCommand: false,  desc: Lang.TAGALL_DESC, dontAddCommandList: true}, (async (message, match) => {
     var im = await checkImAdmin(message);
     if (!im) return await message.client.sendMessage(message.jid,Lang.ADMİN,MessageType.text);
 
