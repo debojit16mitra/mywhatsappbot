@@ -3,7 +3,7 @@ Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const Amdi = require('../events');
+const bunny = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
 const Config = require('../config');
 
@@ -11,7 +11,7 @@ const Language = require('../language');
 const Lang = Language.getString('report');
 
 if (Config.WORKTYPE == 'private') {
-    Amdi.applyCMD({pattern: 'report ?(.*)', fromMe: true, desc: Lang.REPORT,  deleteCommand: false}, (async (message, match) => {
+    bunny.applyCMD({pattern: 'report ?(.*)', fromMe: true, desc: Lang.REPORT,  deleteCommand: false}, (async (message, match) => {
         if (match[1] == '' && message.reply_message) {
             let grp = await message.client.groupMetadata(message.jid);
             var jids = [];
@@ -50,7 +50,7 @@ if (Config.WORKTYPE == 'private') {
 }
 
 else if (Config.WORKTYPE == 'public') {
-    Amdi.applyCMD({pattern: 'report ?(.*)', fromMe: false, desc: Lang.REPORT}, (async (message, match) => {
+    bunny.applyCMD({pattern: 'report ?(.*)', fromMe: false, desc: Lang.REPORT}, (async (message, match) => {
         if (match[1] == '' && message.reply_message) {
             let grp = await message.client.groupMetadata(message.jid);
             var jids = [];
