@@ -5,10 +5,10 @@ const {MessageType} = require('@adiwajshing/baileys');
 const Language = require('../language');
 const Lang = Language.getString('scrapers');
 
-const eng = `⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍\n```⚕️Büññy®Bot Help Panel⚕️```\n⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍\n\n` + 
-`*🤖Command:* ```.gdrive```\n*📙Description:* ```Random Anime Images.```\n\n` +
-`*🤖Command:* ```.ranimel```\n*📙Description:* ```Random Anime Images.```\n\n` +
-`*🤖Command:* ```.nsall```\n*📙Description:* ```Get random NSFW All Types (any) images.```\n\n`
+const eng = `⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍\n```'⚕️Büññy®Bot Help Panel⚕️'```\n⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍\n\n` + 
+`*🤖Command:* ```.gdrive```\n*📙Description:* ```'Google Drive Limit Bypass'```\n\n` +
+`*🤖Command:* ```.ranimel```\n*📙Description:* ```'Random Anime Images'```\n\n` +
+`*🤖Command:* ```.nsall```\n*📙Description:* ```'Get random NSFW All Types (any) images'```\n\n`
 
 if (Config.LANG == 'EN') {
     if (Config.WORKTYPE == 'private') {
