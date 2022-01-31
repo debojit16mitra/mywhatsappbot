@@ -11,7 +11,7 @@ const Language = require('../language');
 const Lang = Language.getString('scrapers');
 
 const eng = `💠●*Text To Image Effect List*●💠\n` + 
-`💠●*Single Text (Eg: .tsketch Bunnybot )*●💠\n\n` + 
+`●*Single Text (Eg: .tsketch Bunnybot )*●\n\n` + 
 `⚙️Command: *.3dchristmas*\n` + 
 `⚙️Command: *.tdeepsea*\n` + 
 `⚙️Command: *.3dscifi*\n` + 
@@ -41,7 +41,7 @@ const eng = `💠●*Text To Image Effect List*●💠\n` +
 `⚙️Command: *.tglitch*\n` + 
 `⚙️Command: *.tharrypotter*\n` +
 `⚙️Command: *.tfogwindows*\n\n` +
-`💠●*Multiple Text (Eg: .tpornhub Bunny/bot )*●💠\n\n` +
+`●*Multiple Text (Eg: .tpornhub Bunny/bot )*●\n\n` +
 `⚙️Command: *.tpornhub*\n` + 
 `⚙️Command: *.2glitch*\n` + 
 `⚙️Command: *.tmarvel*\n` + 
