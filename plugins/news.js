@@ -3,14 +3,14 @@ Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const Asena = require('../events');
+const bunny = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
 const got = require('got');
 
 const Language = require('../language');
 const Lang = Language.getString('newsop');
 
-Asena.addCommand({pattern: 'news ?(.*)', fromMe: false, desc: Lang.NEWS_DESC, dontAddCommandList: true}, async (message, match) => {
+bunny.addCommand({pattern: 'news ?(.*)', fromMe: false, desc: Lang.NEWS_DESC, dontAddCommandList: true}, async (message, match) => {
 	if (match[1] === '') return await message.reply(Lang.NEED_CATEGORY);
 	const url = `https://inshortsapi.vercel.app/news?category=${match[1]}`;
 	try {
