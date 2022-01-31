@@ -2,7 +2,7 @@
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
-
+/*
 const Amdi = require('../events');
 const {MessageType, Mimetype} = require('@adiwajshing/baileys');
 const memeMaker = require('meme-maker')
@@ -49,3 +49,4 @@ Amdi.applyCMD({pattern: 'meme ?(.*)', fromMe: LOL, desc: Lang.MEMES_DESC,  delet
             return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})   
         });
 }));
+*/
