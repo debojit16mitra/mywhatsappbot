@@ -1,6 +1,6 @@
 
 const Bunny = require('../events');
-const QueenAmdi = require('queenamdi-public-2');
+/*const QueenAmdi = require('queenamdi-public-2');*/
 const { MessageType, Mimetype} = require('@adiwajshing/baileys');
 const got = require('got');
 const Config = require('../config');
@@ -11,31 +11,8 @@ const { fetchJson, getBuffer } = require('./fetcher')
 const Lang2 = Language.getString('its_nsfw')
 
 
-
-Bunny.addCommand({ pattern: 'tiktp ?(.*)', fromMe: false, deleteCommand: false, dontAddCommandList: true}, async (message, match) => {
-	//if (Config.NSFW == 'true') {
-  var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageType.text, {quoted: message.data});
-
-  get_result = await fetchJson('https://zenzapi.xyz/api/tikporn?apikey=a1d697f22f')	
-    get_status = get_result.status
-  get_result = get_result.result
-    ini_txt = ""
-	ini_txt += `*📚 API Status :* ${get_status}\n`
-        ini_txt += `*✍ Name :* ${get_result.title}\n`
-        ini_txt += `*📃 Description :* ${get_result.desc}\n`
-        ini_txt += `*📆 Upload Date :* ${get_result.upload}\n`
-	ini_txt += `*🌐 Watch Online :* ${get_result.source}\n`
-        ini_txt += `*📁 Download Link :* ${get_result.video}\n\n`
-
-
-  await message.client.sendMessage(message.jid, '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n*❖ Büññy®Bot NSFW Engine ❖*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n' + ini_txt,MessageType.text, {quoted: message.data});
-  return await message.client.deleteMessage(message.jid, {id: load.key.id, remoteJid: message.jid, fromMe: true})
-	//}
-	//else if (Config.NSFW == 'false') {
-	 //await message.client.sendMessage(message.jid, '*Get lost you horny shit🤬*', MessageType.text,{quoted: message.data});
-	//}
-})
-
+//---------------------sfw-yt-tiktok-------------------------------------------------------------
+/*
 Bunny.addCommand({ pattern: 'ysht ?(.*)', fromMe: false, desc: Lang2.YTSHT_DESC,  deleteCommand: false, dontAddCommandList: true }, async (message, match) => {
   if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a link😒```', MessageType.text, { quoted: message.data });
 var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageType.text, {quoted: message.data});
@@ -60,12 +37,13 @@ var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageTy
 	//return await message.client.deleteMessage(message.jid, {id: load.key.id, remoteJid: message.jid, fromMe: true})
 	
 })
+*/
 
 Bunny.addCommand({ pattern: 'youtu ?(.*)', fromMe: false, desc: Lang2.YTD_DESC,  deleteCommand: false, dontAddCommandList: true }, async (message, match) => {
   if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a link😒```', MessageType.text, { quoted: message.data });
 var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageType.text, {quoted: message.data});
 
-  get_result = await fetchJson('https://zenzapi.xyz/api/downloader/ytmp4' + `?url=${match[1]}&index=2&apikey=a1d697f22f`)
+  get_result = await fetchJson('https://zenzapi.xyz/downloader/ytmp4' + `?url=${match[1]}&index=2&apikey=bunnybotzensapikey`)
   get_status = get_result.status
   get_result = get_result.result
     ini_txt = ""
@@ -84,13 +62,13 @@ var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageTy
 	
 })
 
-
+/*
 Bunny.addCommand({ pattern: 'youl ?(.*)', fromMe: false, desc: Lang2.YTD_DESC,  deleteCommand: false, dontAddCommandList: true }, async (message, match) => {
   if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a link😒```', MessageType.text, { quoted: message.data });
 var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageType.text, {quoted: message.data});
 
 		var apikey = await QueenAmdi.api()
-  get_result = await fetchJson('https://api.lolhuman.xyz/api/ytvideo2?apikey=' + apikey.key + `&url=${match[1]}`)
+  get_result = await fetchJson('https://api.lolhuman.xyz/ytvideo2?apikey=' + apikey.key + `&url=${match[1]}`)
   get_status = get_result.status
   get_result = get_result.result
     ini_txt = ""
@@ -101,6 +79,66 @@ var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageTy
 
 	var webimage = await axios.get(get_result.link, {responseType: 'arraybuffer'})
        await message.sendMessage(Buffer.from(webimage.data), MessageType.video, { mimetype: Mimetype.mp4, quoted: message.data, caption: '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n*❖ Büññy®Bot YT Shorts Engine ❖*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n*Note:*\n 1. click (read more) then only click on download link or else link will be broken.\n\n' + ini_txt})
+	//await message.client.sendMessage(message.jid, '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n*❖ Büññy®Bot YT Downlaod Engine ❖*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n' + ini_txt,MessageType.text, {quoted: message.data});
+	return await message.client.deleteMessage(message.jid, {id: load.key.id, remoteJid: message.jid, fromMe: true})
+	
+})
+*/
+
+Bunny.addCommand({ pattern: 'rtikvid ?(.*)', fromMe: false, desc: Lang2.YTD_DESC,  deleteCommand: false, dontAddCommandList: true }, async (message, match) => {
+  if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a link😒```', MessageType.text, { quoted: message.data });
+var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageType.text, {quoted: message.data});
+
+  get_result = await fetchJson('https://zenzapi.xyz/api/asupan?apikey=bunnybotzensapikey')
+
+	var webimage = await axios.get(get_result.get_result, {responseType: 'arraybuffer'})
+       await message.sendMessage(Buffer.from(webimage.data), MessageType.video, { mimetype: Mimetype.mp4, quoted: message.data, caption: 'ᴳᵉⁿᵉʳᵃᵗᵉᵈ ᴮʸ Büññy®₂₀₂₂' })
+	//await message.client.sendMessage(message.jid, '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n*❖ Büññy®Bot YT Downlaod Engine ❖*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n' + ini_txt,MessageType.text, {quoted: message.data});
+	return await message.client.deleteMessage(message.jid, {id: load.key.id, remoteJid: message.jid, fromMe: true})
+	
+})
+
+
+//--------------------------------------nsfw----------------------------------------------
+Bunny.addCommand({ pattern: 'tiktp ?(.*)', fromMe: false, deleteCommand: false, dontAddCommandList: true}, async (message, match) => {
+	//if (Config.NSFW == 'true') {
+  var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageType.text, {quoted: message.data});
+
+  get_result = await fetchJson('https://zenzapi.xyz/api/tikporn?apikey=bunnybotzensapikey')	
+    get_status = get_result.status
+  get_result = get_result.result
+    ini_txt = ""
+	ini_txt += `*📚 API Status :* ${get_status}\n`
+        ini_txt += `*✍ Name :* ${get_result.title}\n`
+        ini_txt += `*📃 Description :* ${get_result.desc}\n`
+        ini_txt += `*📆 Upload Date :* ${get_result.upload}\n`
+	ini_txt += `*🌐 Watch Online :* ${get_result.source}\n`
+        ini_txt += `*📁 Download Link :* ${get_result.video}\n\n`
+
+
+  await message.client.sendMessage(message.jid, '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n*❖ Büññy®Bot NSFW Engine ❖*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n' + ini_txt,MessageType.text, {quoted: message.data});
+  return await message.client.deleteMessage(message.jid, {id: load.key.id, remoteJid: message.jid, fromMe: true})
+	//}
+	//else if (Config.NSFW == 'false') {
+	 //await message.client.sendMessage(message.jid, '*Get lost you horny shit🤬*', MessageType.text,{quoted: message.data});
+	//}
+})
+
+Bunny.addCommand({ pattern: 'hensht ?(.*)', fromMe: false, desc: Lang2.YTD_DESC,  deleteCommand: false, dontAddCommandList: true }, async (message, match) => {
+var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageType.text, {quoted: message.data});
+
+  get_result = await fetchJson('https://zenzapi.xyz/downloader/hentaivid2?apikey=bunnybotzensapikey')
+  get_status = get_result.status
+  get_result = get_result.result
+    ini_txt = ""
+	ini_txt += `*📚 API Status :* ${get_status}\n`
+        ini_txt += `*✍ Name :* ${get_result.title}\n`
+	ini_txt += `*👀 Views:* ${get_result.views_count}\n`
+	ini_txt += `*📁 Download Link :* ${get_result.video_1}\n\n`
+
+
+	var webimage = await axios.get(get_result.video_1, {responseType: 'arraybuffer'})
+       await message.sendMessage(Buffer.from(webimage.data), MessageType.video, { mimetype: Mimetype.mp4, quoted: message.data, caption: '\n▬▬▬▬▬▬▬▬▬▬▬▬\n*❖ Büññy®Bot Hentai Engine ❖*\n▬▬▬▬▬▬▬▬▬▬▬▬\n' + ini_txt})
 	//await message.client.sendMessage(message.jid, '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n*❖ Büññy®Bot YT Downlaod Engine ❖*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n' + ini_txt,MessageType.text, {quoted: message.data});
 	return await message.client.deleteMessage(message.jid, {id: load.key.id, remoteJid: message.jid, fromMe: true})
 	
@@ -128,27 +166,8 @@ var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageTy
 	return await message.client.deleteMessage(message.jid, {id: load.key.id, remoteJid: message.jid, fromMe: true})
 	
 })
-//-------------------hentai clips-------------------
-
-Bunny.addCommand({ pattern: 'hensht ?(.*)', fromMe: false, desc: Lang2.YTD_DESC,  deleteCommand: false, dontAddCommandList: true }, async (message, match) => {
-var load = await message.client.sendMessage(message.jid,Lang2.PLZ_WAIT,MessageType.text, {quoted: message.data});
-
-  get_result = await fetchJson(`https://zenzapi.xyz/downloader/hentaivid2?apikey=7848cd94229e`)
-  get_status = get_result.status
-  get_result = get_result.result
-    ini_txt = ""
-	ini_txt += `*📚 API Status :* ${get_status}\n`
-        ini_txt += `*✍ Name :* ${get_result.title}\n`
-	ini_txt += `*👀 Views:* ${get_result.views_count}\n`
-	ini_txt += `*📁 Download Link :* ${get_result.video_1}\n\n`
 
 
-	var webimage = await axios.get(get_result.video_1, {responseType: 'arraybuffer'})
-       await message.sendMessage(Buffer.from(webimage.data), MessageType.video, { mimetype: Mimetype.mp4, quoted: message.data, caption: '\n▬▬▬▬▬▬▬▬▬▬▬▬\n*❖ Büññy®Bot Hentai Engine ❖*\n▬▬▬▬▬▬▬▬▬▬▬▬\n' + ini_txt})
-	//await message.client.sendMessage(message.jid, '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n*❖ Büññy®Bot YT Downlaod Engine ❖*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n' + ini_txt,MessageType.text, {quoted: message.data});
-	return await message.client.deleteMessage(message.jid, {id: load.key.id, remoteJid: message.jid, fromMe: true})
-	
-})
 
 
 
