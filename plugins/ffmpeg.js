@@ -5,7 +5,7 @@ you may not use this file except in compliance with the License.
 
 Queen Amdi - Black Amda
 */
-
+/*
 const Amdi = require('../events');
 const {MessageType,Mimetype} = require('@adiwajshing/baileys');
 const fs = require('fs');
@@ -81,3 +81,4 @@ Amdi.applyCMD({pattern: 'ffmpeg ?(.*)', fromMe: LOL,  deleteCommand: false, desc
             return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
         }
 }));    
+*/
