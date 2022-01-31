@@ -32,7 +32,7 @@ bunny.addCommand({pattern: 'filter ?(.*)', fromMe: true, desc: Lang.FILTER_DESC,
     }
 }));
 
-bunny.addCommand({pattern: 'stop ?(.*)', fromMe: true, desc: Lang.STOP_DESC, usage: '.stop "hello"'}, (async (message, match) => {
+bunny.addCommand({pattern: 'stop ?(.*)', fromMe: true, desc: Lang.STOP_DESC, usage: '.stop "hello"', dontAddCommandList: true}, (async (message, match) => {
     match = match[1].match(/[\'\"\“](.*?)[\'\"\“]/gsm);
     if (match === null) {
         return await message.client.sendMessage(message.jid,Lang.NEED_REPLY + '\n*Example:* ```.stop "hello"```',MessageType.text)
