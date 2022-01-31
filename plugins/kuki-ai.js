@@ -21,7 +21,7 @@ const heroku = new Heroku({
 let baseURI = '/apps/' + Config.HEROKU.APP_NAME;
 
 if (Config.CHAT_BOT == 'true') {
-    Bunny.addCommand({ pattern: 'kuki ?(.*)', desc: Lang.KUKI_DESC , fromMe: false,  deleteCommand: false}, (async (message, match) => {
+    Bunny.addCommand({ pattern: 'kuki ?(.*)', desc: Lang.KUKI_DESC , fromMe: false,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
     if (match[1] === '') return await message.client.sendMessage(message.jid, '```Say Something😒```', MessageType.text, { quoted: message.data });
     let url = `https://www.kuki-api.tk/api/BunnyBot/Bunny/message=${match[1]}`
     const response = await got(url);
@@ -31,7 +31,7 @@ if (Config.CHAT_BOT == 'true') {
   }));
 }
 else if (Config.CHAT_BOT == 'false') {
-    Bunny.addCommand({ pattern: 'kuki ?(.*)', desc: Lang.KUKI_DESC , deleteCommand: false}, (async (message, match) => {
+    Bunny.addCommand({ pattern: 'kuki ?(.*)', desc: Lang.KUKI_DESC , deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
     if (match[1] === '') return await message.client.sendMessage(message.jid, '👩🏻: Get Lost. I am not available right now!', MessageType.text, { quoted: message.data });
     let msg = '👩🏻: Get Lost. I am not available right now!\n';
     await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
