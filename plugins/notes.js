@@ -6,13 +6,13 @@ you may not use this file except in compliance with the License.
 const fs = require('fs/promises')
 const path = require('path')
 const { MessageType } = require('@adiwajshing/baileys')
-const Amdi = require('../events');
+const bunny = require('../events');
 const { successfullMessage, errorMessage, infoMessage } = require('../helpers');
 const NotesDB = require('./sql/notes');
 const Language = require('../language')
 const Lang = Language.getString('notes')
 
-Amdi.applyCMD({ pattern: 'notes', fromMe: true,  deleteCommand: false,  desc: Lang.NOTES_USAGE }, async (message, match) => {
+bunny.applyCMD({ pattern: 'notes', fromMe: true,  deleteCommand: false,  desc: Lang.NOTES_USAGE, dontAddCommandList: true}, async (message, match) => {
 
 
     const _notes = await NotesDB.getNotes()
@@ -41,7 +41,7 @@ Amdi.applyCMD({ pattern: 'notes', fromMe: true,  deleteCommand: false,  desc: La
 
 
 
-Amdi.applyCMD({ pattern: 'save ?(.*)', fromMe: true,  deleteCommand: false,  desc: Lang.SAVE_USAGE }, async (message, match) => {
+bunny.applyCMD({ pattern: 'save ?(.*)', fromMe: true,  deleteCommand: false,  desc: Lang.SAVE_USAGE, dontAddCommandList: true}, async (message, match) => {
 
     const userNote = match[1]
 
@@ -89,7 +89,7 @@ Amdi.applyCMD({ pattern: 'save ?(.*)', fromMe: true,  deleteCommand: false,  des
     }
 })
 
-Amdi.applyCMD({ pattern: 'deleteNotes', fromMe: true,  deleteCommand: false,  desc: Lang.DELETE_USAGE }, async (message, match) => {
+bunny.applyCMD({ pattern: 'deleteNotes', fromMe: true,  deleteCommand: false,  desc: Lang.DELETE_USAGE, dontAddCommandList: true}, async (message, match) => {
 
     await NotesDB.deleteAllNotes()
 
