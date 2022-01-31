@@ -3,7 +3,7 @@ Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const Amdi = require('../events');
+const bunny = require('../events');
 const Config = require('../config');
 const {MessageType} = require('@adiwajshing/baileys');
 const tesseract = require("node-tesseract-ocr")
@@ -13,7 +13,7 @@ const Lang = Language.getString('ocr');
 
 if (Config.WORKTYPE == 'private') {
 
-    Amdi.applyCMD({pattern: 'ocr ?(.*)', fromMe: true, desc: Lang.OCR_DESC,  deleteCommand: false}, (async (message, match) => { 
+    bunny.applyCMD({pattern: 'ocr ?(.*)', fromMe: true, desc: Lang.OCR_DESC,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => { 
         
         if (message.reply_message === false) return await message.sendMessage(Lang.NEED_REPLY);    
 	var info = await message.reply(Lang.DOWNLOADING);
@@ -50,7 +50,7 @@ if (Config.WORKTYPE == 'private') {
 }
 else if (Config.WORKTYPE == 'public') {
 
-    Amdi.applyCMD({pattern: 'ocr ?(.*)', fromMe: false, desc: Lang.OCR_DESC}, (async (message, match) => { 
+    bunny.applyCMD({pattern: 'ocr ?(.*)', fromMe: false, desc: Lang.OCR_DESC, dontAddCommandList: true}, (async (message, match) => { 
 
         if (message.reply_message === false) return await message.sendMessage(Lang.NEED_REPLY);    
 	    var info = await message.reply(Lang.DOWNLOADING);
