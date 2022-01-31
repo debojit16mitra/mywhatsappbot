@@ -30,6 +30,7 @@ let hel2 = '⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍\n' + '```⚕️ 
 hel2 += '*🤖Command:* ```.bts```\n*📙Description:*' + ' ```Gives you Random BTS Images.```\n\n';
 hel2 += '*🤖Command:* ```.blackpink```\n*📙Description:*' + ' ```Gives you Random Blackpink Images.```\n\n';
 hel2 += '*🤖Command:* ```.rwallpaper```\n*📙Description:*' + ' ```Gives you Random Wallpapers.```\n\n';
+hel2 += '*🤖Command:* ```.cosplay```\n*📙Description:*' + ' ```Gives you Random Wallpapers.```\n\n';
 
 
 
