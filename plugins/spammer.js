@@ -75,7 +75,7 @@ bunny.applyCMD({pattern: 'spam ?(.*)', fromMe: true, desc: Lang.SPAM_DESC, dontA
 
 }));
 
-Amdi.applyCMD({pattern: 'killspam', fromMe: true, desc: Lang.STOP_SPAMDESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
+bunny.applyCMD({pattern: 'killspam', fromMe: true, desc: Lang.STOP_SPAMDESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
 
     await message.client.sendMessage(message.jid, Lang.STOP_SPAM, MessageType.text);
 
