@@ -3,7 +3,7 @@ Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const Amdi = require('../events');
+const bunny = require('../events');
 const { MessageType, MessageOptions, Mimetype } = require('@adiwajshing/baileys');
 const fs = require('fs');
 const axios = require('axios');
@@ -14,7 +14,7 @@ const Language = require('../language');
 const Lang = Language.getString('ttp');
 
 
-Amdi.applyCMD({ pattern: 'animesay ?(.*)', fromMe: LOL, desc: Lang.ANIME_DESC ,  deleteCommand: false}, (async (message, match) => {
+bunny.applyCMD({ pattern: 'animesay ?(.*)', fromMe: LOL, desc: Lang.ANIME_DESC ,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORD,MessageType.text, {quoted: message.data});
 
@@ -25,7 +25,7 @@ Amdi.applyCMD({ pattern: 'animesay ?(.*)', fromMe: LOL, desc: Lang.ANIME_DESC , 
 }));
 
 
-Amdi.applyCMD({ pattern: 'changesay ?(.*)', fromMe: LOL, desc: Lang.CHANGE_DESC ,  deleteCommand: false}, (async (message, match) => {
+bunny.applyCMD({ pattern: 'changesay ?(.*)', fromMe: LOL, desc: Lang.CHANGE_DESC ,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORD,MessageType.text, {quoted: message.data});
 
@@ -36,7 +36,7 @@ Amdi.applyCMD({ pattern: 'changesay ?(.*)', fromMe: LOL, desc: Lang.CHANGE_DESC 
 }));
 
 
-Amdi.applyCMD({ pattern: 'trumpsay ?(.*)', fromMe: LOL, desc: Lang.TRUMP_DESC,  deleteCommand: false }, (async (message, match) => {
+bunny.applyCMD({ pattern: 'trumpsay ?(.*)', fromMe: LOL, desc: Lang.TRUMP_DESC,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORD,MessageType.text, {quoted: message.data});
 
