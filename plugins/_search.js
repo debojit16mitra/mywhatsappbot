@@ -14,13 +14,13 @@ hel += '*🤖Command:* ```.news```\n*📙Description:*' + ' ```Gives you Latest 
 
 if (Config.LANG == 'EN') {
     if (Config.WORKTYPE == 'private') {
-        bunny.applyCMD({pattern: 'extra', fromMe: true,  deleteCommand: false, desc: Lang.ANIMEALL_DESC}, (async (message, match) => {    
+        bunny.applyCMD({pattern: 'search', fromMe: true,  deleteCommand: false, desc: Lang.ANIMEALL_DESC}, (async (message, match) => {    
             await message.client.sendMessage(message.jid,hel, MessageType.text,{quoted: message.data});
         }));
     }
 
     else if (Config.WORKTYPE == 'public') {
-        bunny.applyCMD({pattern: 'extra', fromMe: false, desc: Lang.ANIMEALL_DESC}, (async (message, match) => {    
+        bunny.applyCMD({pattern: 'search', fromMe: false, desc: Lang.ANIMEALL_DESC}, (async (message, match) => {    
             await message.client.sendMessage(message.jid,hel, MessageType.text,{quoted: message.data});
         }));
     }
