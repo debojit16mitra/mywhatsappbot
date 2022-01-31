@@ -44,3 +44,10 @@ bunny.applyCMD({pattern: 'rwallpaper ?(.*)', fromMe: LOL, desc: Lang.RWALL_DESC,
 
 }));
 
+bunny.applyCMD({pattern: 'cosplay ?(.*)', fromMe: LOL, desc: Lang.BP_DESC,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
+
+    var webimage = await axios.get('https://zenzapi.xyz/api/random/cosplay?apikey=bunnybotzensapikey', { responseType: 'arraybuffer' })
+
+    await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Config.CAP, quoted: message.data })
+
+}));
