@@ -62,19 +62,24 @@ bunny.addCommand({on: 'text', fromMe: false, onlyPm: true , deleteCommand: false
         if (!regexb1ichu.test(message.message)) {
            await message.client.sendMessage(message.jid,plk, MessageType.text, {quoted: message.data })
            await message.client.sendMessage(message.jid,plk2, MessageType.text);
-	if (!regexb2ichu.test(message.message)) {
+	}
+	else if (!regexb2ichu.test(message.message)) {
            await message.client.sendMessage(message.jid,plk, MessageType.text, {quoted: message.data })
            await message.client.sendMessage(message.jid,plk2, MessageType.text);
-	if (!regexb3ichu.test(message.message)) {
+	}
+	else if (!regexb3ichu.test(message.message)) {
            await message.client.sendMessage(message.jid,plk, MessageType.text, {quoted: message.data })
            await message.client.sendMessage(message.jid,plk2, MessageType.text);
-	if (!regexb4ichu.test(message.message)) {
+	}
+	else if (!regexb4ichu.test(message.message)) {
            await message.client.sendMessage(message.jid,plk, MessageType.text, {quoted: message.data })
            await message.client.sendMessage(message.jid,plk2, MessageType.text);
-	if (!regexb5ichu.test(message.message)) {
+	}
+	else if (!regexb5ichu.test(message.message)) {
            await message.client.sendMessage(message.jid,plk, MessageType.text, {quoted: message.data })
            await message.client.sendMessage(message.jid,plk2, MessageType.text);
-	if (!regexb6ichu.test(message.message)) {
+	}
+	else if (!regexb6ichu.test(message.message)) {
            await message.client.sendMessage(message.jid,plk, MessageType.text, {quoted: message.data })
            await message.client.sendMessage(message.jid,plk2, MessageType.text);
         }  
