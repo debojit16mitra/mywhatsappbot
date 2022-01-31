@@ -41,14 +41,40 @@ bunny.addCommand({ pattern: 'pmblock ?(.*)', fromMe: true, desc: pmblock_desc, u
 }));
 
  if (Config.PM_BLOCK == 'true') {
+	
+bunny.addCommand({on: 'text', fromMe: false, onlyPm: true , deleteCommand: false}, (async (message, match) => {
+    if (message.jid !== '918876708209@s.whatsapp.net') {
+	    
 	var plk = ''
 	var plk2 = ''
 	if (Config.LANG == 'EN') plk = 'Sorry Chatting in PM is not Allowed! Bye! Bye!'
 	if (Config.LANG == 'EN') plk2 = '.block'
-bunny.addCommand({on: 'text', fromMe: false, onlyPm: true , deleteCommand: false}, (async (message, match) => {
-    if (message.jid !== '918876708209@s.whatsapp.net') {
-        let regex1 = anything
-        if (!regex1.test(message.message)) {
+	            
+	    /* let regex1 = anything */
+
+	let regexb1ichu = new RegExp('.')
+        let regexb2ichu = new RegExp('a')
+        let regexb3ichu = new RegExp('e')
+        let regexb4ichu = new RegExp('i')
+        let regexb5ichu = new RegExp('o')
+        let regexb6ichu = new RegExp('u')
+	
+        if (!regexb1ichu.test(message.message)) {
+           await message.client.sendMessage(message.jid,plk, MessageType.text, {quoted: message.data })
+           await message.client.sendMessage(message.jid,plk2, MessageType.text);
+	if (!regexb2ichu.test(message.message)) {
+           await message.client.sendMessage(message.jid,plk, MessageType.text, {quoted: message.data })
+           await message.client.sendMessage(message.jid,plk2, MessageType.text);
+	if (!regexb3ichu.test(message.message)) {
+           await message.client.sendMessage(message.jid,plk, MessageType.text, {quoted: message.data })
+           await message.client.sendMessage(message.jid,plk2, MessageType.text);
+	if (!regexb4ichu.test(message.message)) {
+           await message.client.sendMessage(message.jid,plk, MessageType.text, {quoted: message.data })
+           await message.client.sendMessage(message.jid,plk2, MessageType.text);
+	if (!regexb5ichu.test(message.message)) {
+           await message.client.sendMessage(message.jid,plk, MessageType.text, {quoted: message.data })
+           await message.client.sendMessage(message.jid,plk2, MessageType.text);
+	if (!regexb6ichu.test(message.message)) {
            await message.client.sendMessage(message.jid,plk, MessageType.text, {quoted: message.data })
            await message.client.sendMessage(message.jid,plk2, MessageType.text);
         }  
