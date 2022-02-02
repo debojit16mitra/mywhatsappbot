@@ -47,3 +47,24 @@ if (Config.LANG == 'EN') {
         }));
     }
 }
+
+let hel3 = '⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍\n' + '```⚕️ Büññy®Bot Random Image Panel ⚕️```\n' + '⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍\n';
+hel3 += '*🤖Command:* ```.bot```\n*📙Description:*' + ' ```AI chat bot Based on SIMSIM API.```\n\n';
+hel3 += '*🤖Command:* ```.kuki```\n*📙Description:*' + ' ```AI chat bot based on Daisy AI Chat API.```\n\n';
+
+
+
+if (Config.LANG == 'EN') {
+    if (Config.WORKTYPE == 'private') {
+        bunny.applyCMD({pattern: 'aichat', fromMe: true,  deleteCommand: false, desc: Lang.AICHAT_DESC}, (async (message, match) => {    
+            await message.client.sendMessage(message.jid,hel3, MessageType.text,{quoted: message.data});
+        }));
+    }
+
+    else if (Config.WORKTYPE == 'public') {
+        bunny.applyCMD({pattern: 'aichat', fromMe: false, desc: Lang.AICHAT_DESC}, (async (message, match) => {    
+            await message.client.sendMessage(message.jid,hel3, MessageType.text,{quoted: message.data});
+        }));
+    }
+}
+
