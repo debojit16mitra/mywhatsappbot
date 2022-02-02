@@ -54,7 +54,9 @@
         "all_need": {
             "EXTRA_DESC": "All other Extra Commands.",
             "SEARCH_DESC": "All Search Commands.",
-            "RANDOMIMG_DESC": "All other Random Images Commands."
+            "RANDOMIMG_DESC": "All other Random Images Commands.",
+            "AICHAT_DESC": "AI Chat Bots."
+
          },
         "insulting": {
             "EVINS_DESC": "Get an evil insult.",
